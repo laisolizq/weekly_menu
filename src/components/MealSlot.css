@@ -1,0 +1,281 @@
+.meal-slot {
+  padding: 15px 0;
+
+  border-top: 1px solid rgba(91, 151, 163, 0.10);
+
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.meal-slot.disabled {
+  opacity: 0.38;
+}
+
+/* ─────────────────────────────
+   MEAL HEADER
+───────────────────────────── */
+
+.meal-header {
+  display: flex;
+  align-items: center;
+}
+
+.meal-header h3 {
+  margin: 0;
+
+  color: #c7dfe3;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  letter-spacing: 0.035em;
+}
+
+.people-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-left: auto;
+  margin-right: 12px;
+
+  color: #7fbfc0;
+  font-size: 0.78rem;
+}
+
+.people-stepper {
+  display: grid;
+  grid-template-rows: 20px 24px 20px;
+  width: 42px;
+
+  overflow: hidden;
+  border: 1px solid rgba(85, 230, 208, 0.25);
+  border-radius: 9px;
+  background: rgba(7, 22, 28, 0.85);
+}
+
+.people-stepper button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 20px;
+  padding: 0;
+
+  border: 0;
+  background: rgba(85, 230, 208, 0.07);
+  color: #55e6d0;
+  font-size: 0.62rem;
+  line-height: 1;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.people-stepper button:hover:not(:disabled),
+.people-stepper button:focus-visible {
+  background: rgba(85, 230, 208, 0.22);
+  color: #b8fff5;
+  outline: none;
+}
+
+.people-stepper button:disabled {
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.people-stepper output {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 1px solid rgba(85, 230, 208, 0.16);
+  border-bottom: 1px solid rgba(85, 230, 208, 0.16);
+  color: #e0ffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+@media (max-width: 480px) {
+  .people-control {
+    gap: 6px;
+    margin-right: 8px;
+  }
+
+  .people-stepper {
+    grid-template-rows: 24px 28px 24px;
+    width: 48px;
+  }
+
+  .people-stepper button {
+    min-height: 24px;
+    font-size: 0.68rem;
+  }
+
+  .people-stepper output {
+    font-size: 0.95rem;
+  }
+}
+
+/* Keep the control easy to reach with a thumb on narrow screens. */
+.people-stepper button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(85, 230, 208, 0.08);
+}
+
+/* ─────────────────────────────
+   ENABLE / DISABLE BUTTON
+───────────────────────────── */
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  padding: 0;
+
+  border: 1px solid rgba(85, 230, 208, 0.28);
+  border-radius: 50%;
+
+  background: rgba(12, 35, 42, 0.8);
+
+  color: #55e6d0;
+
+  font-size: 1.05rem;
+  font-weight: 300;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.toggle-button:hover {
+  background: rgba(40, 91, 94, 0.45);
+
+  border-color: rgba(85, 230, 208, 0.75);
+
+  color: #8ffff1;
+
+  box-shadow:
+    0 0 12px rgba(85, 230, 208, 0.20);
+
+  transform: scale(1.06);
+}
+
+
+/* ─────────────────────────────
+   SELECTED RECIPES
+───────────────────────────── */
+
+.selected-recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin: 12px 0;
+}
+
+.selected-recipe {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 12px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(24, 58, 67, 0.65),
+      rgba(15, 38, 47, 0.45)
+    );
+
+  border: 1px solid rgba(85, 230, 208, 0.12);
+  border-left: 2px solid rgba(85, 230, 208, 0.55);
+
+  border-radius: 8px;
+}
+
+.selected-recipe span {
+  color: #c1dfe3;
+
+  font-size: 0.88rem;
+}
+
+
+/* ─────────────────────────────
+   REMOVE RECIPE
+───────────────────────────── */
+
+.remove-recipe {
+  padding: 2px 5px;
+
+  border: none;
+  background: transparent;
+
+  color: #66838b;
+
+  font-size: 1rem;
+  font-weight: 300;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.remove-recipe:hover {
+  color: #9acfd0;
+  transform: scale(1.1);
+}
+
+/* ─────────────────────────────
+   RECIPE SELECTOR
+───────────────────────────── */
+
+.recipe-selector {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid rgba(85, 230, 208, 0.16);
+  border-radius: 8px;
+
+  background: rgba(7, 22, 28, 0.75);
+
+  color: #7fbfc0;
+
+  font-size: 0.84rem;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.recipe-selector:hover {
+  border-color: rgba(85, 230, 208, 0.38);
+}
+
+.recipe-selector:focus {
+  border-color: rgba(85, 230, 208, 0.65);
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(85, 230, 208, 0.08),
+    0 0 14px rgba(85, 230, 208, 0.08);
+}
+
+.recipe-selector option {
+  background: #0c2028;
+  color: #cfe3e6;
+}
+
