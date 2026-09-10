@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { copyTextToClipboard } from "../services/clipboard";
 import type { ShoppingItem } from "../services/shoppingList";
 import "./ShoppingList.css";
 
@@ -23,13 +24,14 @@ export default function ShoppingList({
 
     window.open("https://keep.google.com/", "_blank", "noopener,noreferrer");
 
-    try {
-      await navigator.clipboard.writeText(text);
+    const success = await copyTextToClipboard(text);
+    if (success) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 2500);
-    } catch {
-      setCopied(false);
+      return;
     }
+
+    setCopied(false);
   };
 
   return (

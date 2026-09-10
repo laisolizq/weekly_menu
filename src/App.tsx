@@ -4,7 +4,7 @@ import RecipeManager from "./components/RecipeManager";
 import ShoppingList from "./components/ShoppingList";
 import WeeklySummary from "./components/WeeklySummary";
 import recipesData from "./data/recipes.json";
-import { downloadShoppingImage, downloadWeekImage } from "./services/exportImage";
+import { copyTextToClipboard } from "./services/clipboard";
 import { generateShoppingList } from "./services/shoppingList";
 import type { DayPlan, Recipe } from "./types/recipe";
 import "./App.css";
@@ -75,6 +75,47 @@ function App() {
 
   const addCatalogRecipe = (recipe: Recipe) => {
     setRecipes((currentRecipes) => [...currentRecipes, recipe]);
+  };
+
+  const copyWeekText = async () => {
+    const text = [
+      "MENÚ SEMANAL",
+      "",
+      ...week.map((day) => {
+        const lunch =
+          !day.lunch.enabled || day.lunch.recipes.length === 0
+            ? `Comida: ${day.lunch.people} personas · Sin asignar`
+            : `Comida: ${day.lunch.people} personas · ${day.lunch.recipes
+                .map((recipeId) => recipes.find((recipe) => recipe.id === recipeId)?.name)
+                .filter(Boolean)
+                .join(" + ")}`;
+
+        const dinner =
+          !day.dinner.enabled || day.dinner.recipes.length === 0
+            ? `Cena: ${day.dinner.people} personas · Sin asignar`
+            : `Cena: ${day.dinner.people} personas · ${day.dinner.recipes
+                .map((recipeId) => recipes.find((recipe) => recipe.id === recipeId)?.name)
+                .filter(Boolean)
+                .join(" + ")}`;
+
+        return `${day.day}: ${lunch} | ${dinner}`;
+      }),
+    ].join("\n");
+
+    await copyTextToClipboard(text);
+  };
+
+  const copyShoppingText = async () => {
+    const text = [
+      "LISTA DE LA COMPRA",
+      "",
+      ...shoppingList.map(
+        (item) =>
+          `☐ ${item.name} · ${item.people.join(", ")} personas · ${item.days} días · ${item.total} personas-comida`
+      ),
+    ].join("\n");
+
+    await copyTextToClipboard(text);
   };
 
   const toggleMeal = (
@@ -184,17 +225,11 @@ function App() {
           >
             {showRecipeManager ? "Cerrar recetas" : "Añadir recetas"}
           </button>
-          <button
-            className="header-action"
-            onClick={() => downloadWeekImage(week, recipes)}
-          >
-            Guardar semana
+          <button className="header-action" onClick={copyWeekText}>
+            Copiar semana
           </button>
-          <button
-            className="header-action"
-            onClick={() => downloadShoppingImage(shoppingList)}
-          >
-            Guardar compra
+          <button className="header-action" onClick={copyShoppingText}>
+            Copiar compra
           </button>
         </div>
       </header>
