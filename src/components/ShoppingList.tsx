@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { copyTextToClipboard } from "../services/clipboard";
 import type { ShoppingItem } from "../services/shoppingList";
 import "./ShoppingList.css";
 
@@ -10,43 +8,10 @@ interface ShoppingListProps {
 export default function ShoppingList({
   items,
 }: ShoppingListProps) {
-  const [copied, setCopied] = useState(false);
-
-  const copyForGoogleKeep = async () => {
-    const text = [
-      "LISTA DE LA COMPRA",
-      "",
-      ...items.map(
-        (item) =>
-          `☐ ${item.name} · ${item.people.join(", ")} personas · ${item.days} días · ${item.total} personas-comida`
-      ),
-    ].join("\n");
-
-    window.open("https://keep.google.com/", "_blank", "noopener,noreferrer");
-
-    const success = await copyTextToClipboard(text);
-    if (success) {
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2500);
-      return;
-    }
-
-    setCopied(false);
-  };
-
   return (
     <section className="shopping-list">
       <div className="shopping-list-heading">
         <h2>Lista de la compra</h2>
-        {items.length > 0 && (
-          <button
-            type="button"
-            className="keep-button"
-            onClick={copyForGoogleKeep}
-          >
-            {copied ? "Copiada para Keep" : "Copiar para Google Keep"}
-          </button>
-        )}
       </div>
 
       {items.length === 0 ? (

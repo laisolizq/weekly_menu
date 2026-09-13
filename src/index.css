@@ -1,4 +1,20 @@
 :root {
+  --bg: #fffaf8;
+  --bg-strong: #fff2ef;
+  --panel: rgba(255, 255, 255, 0.75);
+  --panel-soft: rgba(255, 248, 245, 0.9);
+  --rose: #f6c5d3;
+  --rose-strong: #ef9db2;
+  --rose-deep: #d77b96;
+  --blush: #f9e1dc;
+  --cream: #fff5eb;
+  --cream-deep: #f3e2d2;
+  --petal: #fce9ef;
+  --ink: #4b3d3f;
+  --muted: #7a6768;
+  --line: rgba(185, 129, 146, 0.18);
+  --shadow: rgba(122, 82, 92, 0.1);
+
   font-family:
     "Inter",
     "Segoe UI",
@@ -7,8 +23,8 @@
     BlinkMacSystemFont,
     sans-serif;
 
-  color: #dceaf0;
-  background: #071116;
+  color: var(--ink);
+  background: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,7 +37,7 @@
 
 html {
   min-width: 320px;
-  background: #071116;
+  background: var(--bg);
 }
 
 body {
@@ -29,12 +45,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(
-      circle at top,
-      rgba(21, 75, 91, 0.18),
-      transparent 38%
-    ),
-    #071116;
+    radial-gradient(circle at 12% 12%, rgba(246, 197, 211, 0.3), transparent 18%),
+    radial-gradient(circle at 85% 8%, rgba(243, 226, 210, 0.5), transparent 21%),
+    radial-gradient(circle at 25% 70%, rgba(249, 225, 220, 0.25), transparent 16%),
+    linear-gradient(180deg, #fffdfc 0%, #fff6f3 100%);
+  color: var(--ink);
 }
 
 button,
@@ -48,6 +63,6 @@ button {
 
 button:focus-visible,
 select:focus-visible {
-  outline: 2px solid #69c4c5;
+  outline: 2px solid rgba(215, 123, 150, 0.8);
   outline-offset: 2px;
 }

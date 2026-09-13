@@ -3,13 +3,13 @@ import DayCard from "./components/DayCard";
 import RecipeManager from "./components/RecipeManager";
 import ShoppingList from "./components/ShoppingList";
 import WeeklySummary from "./components/WeeklySummary";
-import recipesData from "./data/recipes.json";
 import { copyTextToClipboard } from "./services/clipboard";
 import { generateShoppingList } from "./services/shoppingList";
 import type { DayPlan, Recipe } from "./types/recipe";
+import { getRecipes } from "./services/recipesApi";
+import { db, saveRecipes } from "./services/localDb";
+import { syncPendingOperations } from "./services/sync";
 import "./App.css";
-
-const initialRecipes = recipesData as Recipe[];
 
 const DAYS = [
   "Lunes",
@@ -48,10 +48,9 @@ function normalizeWeek(week: DayPlan[]): DayPlan[] {
 function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [showRecipeManager, setShowRecipeManager] = useState(false);
-  const [recipes, setRecipes] = useState<Recipe[]>(initialRecipes);
-
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
   const [week, setWeek] = useState<DayPlan[]>(() => {
-    const saved = localStorage.getItem("weekly-menu");
+  const saved = localStorage.getItem("weekly-menu");
 
     if (saved) {
       try {
@@ -68,14 +67,55 @@ function App() {
     localStorage.setItem("weekly-menu", JSON.stringify(week));
   }, [week]);
 
+  useEffect(() => {
+    syncPendingOperations();
+
+    getRecipes()
+      .then((recipesFromApi) => {
+        setRecipes(recipesFromApi);
+        return saveRecipes(recipesFromApi);
+      })
+      .catch(async (error) => {
+        console.error("Error loading recipes from API:", error);
+
+        const localRecipes = await db.recipes.toArray();
+
+        setRecipes(localRecipes);
+      });
+  }, []);
+
   const shoppingList = useMemo(
     () => generateShoppingList(week, recipes),
     [week, recipes]
   );
 
-  const addCatalogRecipe = (recipe: Recipe) => {
-    setRecipes((currentRecipes) => [...currentRecipes, recipe]);
-  };
+const addCatalogRecipe = async (recipe: Recipe) => {
+  try {
+    const recipeWithId = {
+      ...recipe,
+      id: crypto.randomUUID(),
+    };
+
+    await db.recipes.put(recipeWithId);
+
+    await db.syncQueue.add({
+      id: crypto.randomUUID(),
+      type: "ADD",
+      entityId: recipeWithId.id,
+      payload: recipeWithId,
+      createdAt: new Date().toISOString(),
+    });
+
+    setRecipes((currentRecipes) => [
+      ...currentRecipes,
+      recipeWithId,
+    ]);
+
+    await syncPendingOperations();
+  } catch (error) {
+    console.error("Error saving recipe locally:", error);
+  }
+};
 
   const copyWeekText = async () => {
     const text = [
@@ -115,6 +155,7 @@ function App() {
       ),
     ].join("\n");
 
+    window.open("https://keep.google.com/", "_blank", "noopener,noreferrer");
     await copyTextToClipboard(text);
   };
 
@@ -206,8 +247,6 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>Menú semanal</h1>
-        <p>Organiza tus comidas de la semana</p>
-
         {!showSummary && (
           <button
             className="summary-button"
