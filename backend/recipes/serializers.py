@@ -6,6 +6,9 @@ class IngredientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ingredient
         fields = ["name"]
+        extra_kwargs = {
+            "name": {"validators": []}
+        }
 
 class RecipeSerializer(serializers.ModelSerializer):
     id = serializers.UUIDField()
@@ -14,7 +17,12 @@ class RecipeSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         ingredients_data = validated_data.pop("ingredients")
 
-        recipe = Recipe.objects.create(**validated_data)
+        recipe, created = Recipe.objects.get_or_create(
+            id=validated_data["id"],
+            defaults={
+                "name": validated_data["name"],
+            },
+        )
 
         for ingredient_data in ingredients_data:
             ingredient, _ = Ingredient.objects.get_or_create(

@@ -18,4 +18,6 @@ class RecipeListView(APIView):
             serializer.save()
             return Response(serializer.data, status=201)
 
+        print("VALIDATION ERROR:", serializer.errors)
+
         return Response(serializer.errors, status=400)

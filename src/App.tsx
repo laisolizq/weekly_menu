@@ -9,6 +9,7 @@ import type { DayPlan, Recipe } from "./types/recipe";
 import { getRecipes } from "./services/recipesApi";
 import { db, saveRecipes } from "./services/localDb";
 import { syncPendingOperations } from "./services/sync";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 
 const DAYS = [
@@ -93,23 +94,23 @@ const addCatalogRecipe = async (recipe: Recipe) => {
   try {
     const recipeWithId = {
       ...recipe,
-      id: crypto.randomUUID(),
+      id: uuidv4(),
     };
 
     await db.recipes.put(recipeWithId);
-
-    await db.syncQueue.add({
-      id: crypto.randomUUID(),
-      type: "ADD",
-      entityId: recipeWithId.id,
-      payload: recipeWithId,
-      createdAt: new Date().toISOString(),
-    });
 
     setRecipes((currentRecipes) => [
       ...currentRecipes,
       recipeWithId,
     ]);
+
+    await db.syncQueue.add({
+      id: uuidv4(),
+      type: "ADD",
+      entityId: recipeWithId.id,
+      payload: recipeWithId,
+      createdAt: new Date().toISOString(),
+    });
 
     await syncPendingOperations();
   } catch (error) {
@@ -147,17 +148,14 @@ const addCatalogRecipe = async (recipe: Recipe) => {
 
   const copyShoppingText = async () => {
     const text = [
-      "LISTA DE LA COMPRA",
-      "",
       ...shoppingList.map(
-        (item) =>
-          `☐ ${item.name} · ${item.people.join(", ")} personas · ${item.days} días · ${item.total} personas-comida`
+        (item) => `${item.name} - ${item.total} personas-comida`
       ),
     ].join("\n");
 
-    window.open("https://keep.google.com/", "_blank", "noopener,noreferrer");
     await copyTextToClipboard(text);
   };
+
 
   const toggleMeal = (
     dayIndex: number,

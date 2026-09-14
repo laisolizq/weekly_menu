@@ -1,6 +1,6 @@
 import type { Recipe } from "../types/recipe";
 
-const API_URL = "http://127.0.0.1:8000/api";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getRecipes(): Promise<Recipe[]> {
   const response = await fetch(`${API_URL}/recipes/`);
@@ -22,11 +22,12 @@ export async function createRecipe(recipe: Recipe): Promise<Recipe> {
   });
 
   if (!response.ok) {
-    const errorData = await response.json();
+    const errorData = await response.text();
+
     console.error("API error:", errorData);
 
     throw new Error("Error creating recipe");
-    }
+  }
 
   return response.json();
 }
