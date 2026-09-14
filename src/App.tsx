@@ -300,7 +300,7 @@ const addCatalogRecipe = async (recipe: Recipe) => {
         )}
 
         <div className="app-actions">
-          {installState.installable && !installState.installed && (
+          {installState.installable && !installState.installed && !isLocal && (
             <button className="header-action install-button" onClick={handleInstallClick}>
               Instalar app
             </button>
