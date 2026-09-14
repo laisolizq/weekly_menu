@@ -22,6 +22,10 @@ const DAYS = [
   "Domingo",
 ];
 
+const isLocal =
+  window.location.hostname === "192.168.1.146" ||
+  window.location.hostname === "localhost";
+
 function createInitialWeek(): DayPlan[] {
   return DAYS.map((day) => ({
     day,
@@ -259,6 +263,7 @@ const addCatalogRecipe = async (recipe: Recipe) => {
             className="header-action"
             onClick={() => setShowRecipeManager((visible) => !visible)}
             aria-expanded={showRecipeManager}
+            disabled={!isLocal}
           >
             {showRecipeManager ? "Cerrar recetas" : "Añadir recetas"}
           </button>
