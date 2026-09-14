@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg'],
+      includeAssets: ['favicon.png'],
       manifest: {
         name: 'Menú semanal',
         short_name: 'Menú semanal',
@@ -22,9 +22,9 @@ export default defineConfig(({ mode }) => ({
         lang: 'es',
         icons: [
           {
-            src: '/weekly_menu/icon-1024.svg',
+            src: '/weekly_menu/icon-1024.png',
             sizes: '1024x1024',
-            type: 'image/svg+xml',
+            type: 'image/png',
             purpose: 'any maskable',
           }
         ],

@@ -10,7 +10,13 @@ import { getRecipes } from "./services/recipesApi";
 import { db, saveRecipes } from "./services/localDb";
 import { syncPendingOperations } from "./services/sync";
 import { v4 as uuidv4 } from "uuid";
+import { getPwaInstallState } from "./services/pwa";
 import "./App.css";
+
+type BeforeInstallPromptEvent = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>; 
+};
 
 const DAYS = [
   "Lunes",
@@ -54,6 +60,8 @@ function App() {
   const [showSummary, setShowSummary] = useState(false);
   const [showRecipeManager, setShowRecipeManager] = useState(false);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
+  const [installPrompt, setInstallPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+  const [installState, setInstallState] = useState(() => getPwaInstallState());
   const [week, setWeek] = useState<DayPlan[]>(() => {
   const saved = localStorage.getItem("weekly-menu");
 
@@ -75,6 +83,22 @@ function App() {
   useEffect(() => {
     syncPendingOperations();
 
+    const onBeforeInstallPrompt = (event: Event) => {
+      event.preventDefault();
+      setInstallPrompt(event as BeforeInstallPromptEvent);
+      setInstallState(getPwaInstallState());
+    };
+
+    const onAppInstalled = () => {
+      setInstallPrompt(null);
+      setInstallState({ installed: true, installable: false });
+    };
+
+    window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
+    window.addEventListener("appinstalled", onAppInstalled);
+
+    setInstallState(getPwaInstallState());
+
     getRecipes()
       .then((recipesFromApi) => {
         setRecipes(recipesFromApi);
@@ -87,7 +111,24 @@ function App() {
 
         setRecipes(localRecipes);
       });
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", onBeforeInstallPrompt);
+      window.removeEventListener("appinstalled", onAppInstalled);
+    };
   }, []);
+
+  const handleInstallClick = async () => {
+    if (!installPrompt) return;
+
+    installPrompt.prompt();
+    const result = await installPrompt.userChoice;
+
+    if (result.outcome === "accepted") {
+      setInstallPrompt(null);
+      setInstallState({ installed: true, installable: false });
+    }
+  };
 
   const shoppingList = useMemo(
     () => generateShoppingList(week, recipes),
@@ -259,6 +300,11 @@ const addCatalogRecipe = async (recipe: Recipe) => {
         )}
 
         <div className="app-actions">
+          {installState.installable && !installState.installed && (
+            <button className="header-action install-button" onClick={handleInstallClick}>
+              Instalar app
+            </button>
+          )}
           <button
             className="header-action"
             onClick={() => setShowRecipeManager((visible) => !visible)}
