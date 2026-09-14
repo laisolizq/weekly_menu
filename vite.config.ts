@@ -22,17 +22,11 @@ export default defineConfig(({ mode }) => ({
         lang: 'es',
         icons: [
           {
-            src: '/weekly_menu/icon-192.svg',
-            sizes: '192x192',
+            src: '/weekly_menu/icon-1024.svg',
+            sizes: '1024x1024',
             type: 'image/svg+xml',
             purpose: 'any maskable',
-          },
-          {
-            src: '/weekly_menu/icon-512.svg',
-            sizes: '512x512',
-            type: 'image/svg+xml',
-            purpose: 'any maskable',
-          },
+          }
         ],
       },
     }),
