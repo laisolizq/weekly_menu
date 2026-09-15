@@ -35,11 +35,9 @@ jobs:
         run: npm ci
 
       - name: Download recipes snapshot
-            run: |
-              mkdir -p public
-              curl -L \
-                "https://github.com/laisolizq/weekly_menu/releases/download/recipes-data/recipes.json" \
-                -o public/recipes.json
+        run: |
+          mkdir -p public
+          curl -L "https://github.com/laisolizq/weekly_menu/releases/download/recipes-data/recipes.json" -o public/recipes.json
 
       - name: Build
         run: npm run build
