@@ -101,7 +101,6 @@ function App() {
 
     const loadRecipes = async () => {
       try {
-        // En casa: cargar desde Django
         if (isLocal) {
           const recipesFromApi = await getRecipes();
 
@@ -111,7 +110,6 @@ function App() {
           return;
         }
 
-        // Fuera de casa: primero mirar IndexedDB
         const localRecipes = await db.recipes.toArray();
 
         if (localRecipes.length > 0) {
@@ -119,9 +117,8 @@ function App() {
           return;
         }
 
-        // Si IndexedDB está vacío, cargar el snapshot de GitHub
         const response = await fetch(
-          "https://github.com/laisolizq/weekly_menu/releases/download/recipes-data/recipes.json"
+          `${import.meta.env.BASE_URL}recipes.json`
         );
 
         if (!response.ok) {
