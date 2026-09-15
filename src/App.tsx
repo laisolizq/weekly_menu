@@ -99,18 +99,49 @@ function App() {
 
     setInstallState(getPwaInstallState());
 
-    getRecipes()
-      .then((recipesFromApi) => {
-        setRecipes(recipesFromApi);
-        return saveRecipes(recipesFromApi);
-      })
-      .catch(async (error) => {
-        console.error("Error loading recipes from API:", error);
+    const loadRecipes = async () => {
+      try {
+        // En casa: cargar desde Django
+        if (isLocal) {
+          const recipesFromApi = await getRecipes();
 
+          setRecipes(recipesFromApi);
+          await saveRecipes(recipesFromApi);
+
+          return;
+        }
+
+        // Fuera de casa: primero mirar IndexedDB
         const localRecipes = await db.recipes.toArray();
 
+        if (localRecipes.length > 0) {
+          setRecipes(localRecipes);
+          return;
+        }
+
+        // Si IndexedDB está vacío, cargar el snapshot de GitHub
+        const response = await fetch(
+          "https://github.com/laisolizq/weekly_menu/releases/download/recipes-data/recipes.json"
+        );
+
+        if (!response.ok) {
+          throw new Error("Error loading recipes snapshot");
+        }
+
+        const recipesFromRelease = await response.json();
+
+        await saveRecipes(recipesFromRelease);
+        setRecipes(recipesFromRelease);
+      } catch (error) {
+        console.error("Error loading recipes:", error);
+
+        // Último fallback: IndexedDB
+        const localRecipes = await db.recipes.toArray();
         setRecipes(localRecipes);
-      });
+      }
+    };
+
+    loadRecipes();
 
     return () => {
       window.removeEventListener("beforeinstallprompt", onBeforeInstallPrompt);
