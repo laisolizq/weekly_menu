@@ -1,4 +1,8 @@
-import type { DayPlan, Recipe } from "../types/recipe";
+import type {
+  Component,
+  DayPlan,
+  Selection,
+} from "../types/recipe";
 import MealSlot from "./MealSlot";
 import "./DayCard.css";
 
@@ -6,25 +10,45 @@ interface DayCardProps {
   dayPlan: DayPlan;
   dayIndex: number;
   week: DayPlan[];
-  recipes: Recipe[];
-  onToggleMeal: (meal: "lunch" | "dinner") => void;
-  onPeopleChange: (meal: "lunch" | "dinner", people: number) => void;
-  onAddRecipe: (
-    recipeId: string,
-    targets: Array<{ dayIndex: number; meal: "lunch" | "dinner" }>
+  components: Component[];
+  onToggleMeal: (
+    meal: "lunch" | "dinner"
   ) => void;
-  onRemoveRecipe: (meal: "lunch" | "dinner", recipeId: string) => void;
+  onPeopleChange: (
+    meal: "lunch" | "dinner",
+    people: number
+  ) => void;
+  onAddSelection: (
+    meal: "lunch" | "dinner",
+    category:
+      | "carbs"
+      | "proteins"
+      | "vegetables"
+      | "elaborations"
+      | "extras",
+    selection: Selection
+  ) => void;
+  onRemoveSelection: (
+    meal: "lunch" | "dinner",
+    category:
+      | "carbs"
+      | "proteins"
+      | "vegetables"
+      | "elaborations"
+      | "extras",
+    selection: Selection
+  ) => void;
 }
 
 export default function DayCard({
   dayPlan,
   dayIndex,
   week,
-  recipes,
+  components,
   onToggleMeal,
   onPeopleChange,
-  onAddRecipe,
-  onRemoveRecipe,
+  onAddSelection,
+  onRemoveSelection,
 }: DayCardProps) {
   return (
     <section className="day-card">
@@ -35,12 +59,32 @@ export default function DayCard({
         dayIndex={dayIndex}
         week={week}
         meal={dayPlan.lunch}
-        recipes={recipes}
-        onToggle={() => onToggleMeal("lunch")}
-        onPeopleChange={(people) => onPeopleChange("lunch", people)}
-        onAddRecipe={onAddRecipe}
-        onRemoveRecipe={(recipeId) =>
-          onRemoveRecipe("lunch", recipeId)
+        components={components}
+        onToggle={() =>
+          onToggleMeal("lunch")
+        }
+        onPeopleChange={(people) =>
+          onPeopleChange("lunch", people)
+        }
+        onAddSelection={(
+          category,
+          selection
+        ) =>
+          onAddSelection(
+            "lunch",
+            category,
+            selection
+          )
+        }
+        onRemoveSelection={(
+          category,
+          selection
+        ) =>
+          onRemoveSelection(
+            "lunch",
+            category,
+            selection
+          )
         }
       />
 
@@ -49,12 +93,32 @@ export default function DayCard({
         dayIndex={dayIndex}
         week={week}
         meal={dayPlan.dinner}
-        recipes={recipes}
-        onToggle={() => onToggleMeal("dinner")}
-        onPeopleChange={(people) => onPeopleChange("dinner", people)}
-        onAddRecipe={onAddRecipe}
-        onRemoveRecipe={(recipeId) =>
-          onRemoveRecipe("dinner", recipeId)
+        components={components}
+        onToggle={() =>
+          onToggleMeal("dinner")
+        }
+        onPeopleChange={(people) =>
+          onPeopleChange("dinner", people)
+        }
+        onAddSelection={(
+          category,
+          selection
+        ) =>
+          onAddSelection(
+            "dinner",
+            category,
+            selection
+          )
+        }
+        onRemoveSelection={(
+          category,
+          selection
+        ) =>
+          onRemoveSelection(
+            "dinner",
+            category,
+            selection
+          )
         }
       />
     </section>

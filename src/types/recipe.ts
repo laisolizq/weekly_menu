@@ -1,17 +1,33 @@
-export interface Ingredient {
+export interface ComponentVariant {
+  id: string;
   name: string;
 }
 
-export interface Recipe {
+export interface Component {
   id: string;
   name: string;
-  ingredients: Ingredient[];
+  category:
+    | "CARB"
+    | "PROTEIN"
+    | "VEGETABLE"
+    | "ELABORATION"
+    | "EXTRA";
+  variants: ComponentVariant[];
+}
+
+export interface Selection {
+  componentId: string;
+  variantId?: string;
 }
 
 export interface Meal {
   enabled: boolean;
-  recipes: string[];
   people: number;
+  carbs: Selection[];
+  proteins: Selection[];
+  vegetables: Selection[];
+  elaborations: Selection[];
+  extras: Selection[];
 }
 
 export interface DayPlan {

@@ -1,23 +1,23 @@
 import Dexie, { type Table } from "dexie";
-import type { Recipe } from "../types/recipe";
+import type { Component } from "../types/recipe";
 
 export type SyncOperation = {
   id: string;
-  type: "ADD";
+  type: "ADD_SAVED_MENU";
   entityId: string;
-  payload: Recipe;
+  payload: unknown;
   createdAt: string;
 };
 
 export class LocalDatabase extends Dexie {
-  recipes!: Table<Recipe, string>;
+  components!: Table<Component, string>;
   syncQueue!: Table<SyncOperation, string>;
 
   constructor() {
     super("weekly-menu");
 
-    this.version(2).stores({
-      recipes: "id",
+    this.version(3).stores({
+      components: "id",
       syncQueue: "id",
     });
   }
@@ -25,6 +25,6 @@ export class LocalDatabase extends Dexie {
 
 export const db = new LocalDatabase();
 
-export async function saveRecipes(recipes: Recipe[]) {
-  await db.recipes.bulkPut(recipes);
+export async function saveComponents(components: Component[]) {
+  await db.components.bulkPut(components);
 }

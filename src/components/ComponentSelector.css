@@ -1,0 +1,160 @@
+.component-selector-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fffaf7;
+  overflow: hidden;
+}
+
+.component-selector-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem;
+  border-bottom: 1px solid #e5ded8;
+  background: #fffaf7;
+}
+
+.component-selector-back {
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #e5ded8;
+  border-radius: 50%;
+
+  background: white;
+  color: #4f4540;
+
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.component-selector-kicker {
+  display: block;
+
+  font-size: 0.75rem;
+  color: #9b8c82;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.component-selector-header h3 {
+  margin: 0.15rem 0 0;
+
+  font-size: 1.35rem;
+  color: #4f4540;
+}
+
+.component-selector-grid {
+  flex: 1;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+
+  gap: 0.6rem;
+
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.component-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 80px;
+  padding: 0.75rem;
+
+  border: 1px solid #e5ded8;
+  border-radius: 14px;
+
+  background: white;
+  color: #4f4540;
+
+  cursor: pointer;
+}
+
+.component-option.selected {
+  border-color: #9b8c82;
+  background: #eee7e1;
+}
+
+.component-option-icon {
+  margin-bottom: 0.35rem;
+
+  font-size: 1.2rem;
+  color: #9b8c82;
+}
+
+.component-option-name {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Bloque de un componente con variantes */
+.component-with-variants {
+  grid-column: 1 / -1;
+
+  padding: 0.85rem;
+
+  border: 1px solid #e5ded8;
+  border-radius: 14px;
+
+  background: white;
+}
+
+.component-parent-name {
+  margin: 0 0 0.7rem;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #4f4540;
+}
+
+.component-variants {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.component-variants .component-option {
+  min-height: 58px;
+  padding: 0.55rem;
+}
+
+.component-variants .component-option-icon {
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.component-variants .component-option-name {
+  font-size: 0.85rem;
+}
+
+.component-selector-footer {
+  padding: 0.75rem 1rem;
+
+  border-top: 1px solid #e5ded8;
+  background: #fffaf7;
+}
+
+.component-selector-footer button {
+  width: 100%;
+  padding: 0.85rem;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: #9b8c82;
+  color: white;
+
+  font-size: 1rem;
+  cursor: pointer;
+}

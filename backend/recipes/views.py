@@ -1,23 +1,12 @@
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Recipe
-from .serializers import RecipeSerializer
+from .models import Component
+from .serializers import ComponentSerializer
 
 
-class RecipeListView(APIView):
+class ComponentListView(APIView):
     def get(self, request):
-        recipes = Recipe.objects.all()
-        serializer = RecipeSerializer(recipes, many=True)
+        components = Component.objects.prefetch_related("variants").all()
+        serializer = ComponentSerializer(components, many=True)
         return Response(serializer.data)
-
-    def post(self, request):
-        serializer = RecipeSerializer(data=request.data)
-
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=201)
-
-        print("VALIDATION ERROR:", serializer.errors)
-
-        return Response(serializer.errors, status=400)
