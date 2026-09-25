@@ -10,12 +10,16 @@ import "./MealBuilder.css";
 type SelectionCategory =
   | "carbs"
   | "proteins"
-  | "vegetables";
+  | "vegetables"
+  | "elaborations"
+  | "extras";
 
 const CATEGORIES: SelectionCategory[] = [
   "carbs",
   "proteins",
   "vegetables",
+  "elaborations",
+  "extras",
 ];
 
 const CATEGORY_LABELS: Record<
@@ -25,12 +29,15 @@ const CATEGORY_LABELS: Record<
   carbs: "Hidratos",
   proteins: "Proteínas",
   vegetables: "Verduras",
+  elaborations: "Elaboración / Salsas",
+  extras: "Extras",
 };
 
 interface MealBuilderProps {
   title: string;
   meal: Meal;
   components: Component[];
+  initialCategory: SelectionCategory | null;
   onPeopleChange: (people: number) => void;
   onAddSelection: (
     category: SelectionCategory,
@@ -48,28 +55,52 @@ export default function MealBuilder({
   title,
   meal,
   components,
+  initialCategory,
   onPeopleChange,
   onAddSelection,
   onRemoveSelection,
   onClose,
   onToggle,
 }: MealBuilderProps) {
-  // 0 = personas
-  // 1 = hidratos
-  // 2 = proteínas
-  // 3 = verduras
-  const [step, setStep] = useState(0);
+  const isEditingCategory =
+    initialCategory !== null;
+
+  /*
+   * 0 = personas
+   * 1 = hidratos
+   * 2 = proteínas
+   * 3 = verduras
+   * 4 = elaboración / salsas
+   * 5 = extras
+   */
+  const [step, setStep] = useState(() => {
+    if (!initialCategory) {
+      return 0;
+    }
+
+    return (
+      CATEGORIES.indexOf(initialCategory) + 1
+    );
+  });
 
   const currentCategory =
     step > 0 ? CATEGORIES[step - 1] : null;
 
   const goNext = () => {
     setStep((current) =>
-      Math.min(current + 1, CATEGORIES.length)
+      Math.min(
+        current + 1,
+        CATEGORIES.length
+      )
     );
   };
 
   const goBack = () => {
+    if (isEditingCategory) {
+      onClose();
+      return;
+    }
+
     setStep((current) =>
       Math.max(current - 1, 0)
     );
@@ -79,10 +110,11 @@ export default function MealBuilder({
     onClose();
   };
 
+  const totalSteps = CATEGORIES.length + 1;
+
   /*
    * PERSONAS
    */
-
   if (step === 0) {
     return (
       <div className="meal-builder-overlay">
@@ -116,7 +148,7 @@ export default function MealBuilder({
           <main className="meal-builder-main meal-builder-people">
             <div className="meal-builder-step">
               <span className="meal-builder-step-number">
-                Paso 1 de 4
+                Paso 1 de {totalSteps}
               </span>
 
               <h3>
@@ -181,16 +213,34 @@ export default function MealBuilder({
     );
   }
 
-  /*
-   * HIDRATOS / PROTEÍNAS / VERDURAS
-   */
-
   if (!currentCategory) {
     return null;
   }
 
   const isLastStep =
-    currentCategory === "vegetables";
+    currentCategory === "extras";
+
+  /*
+   * Cuando estamos editando una categoría concreta,
+   * "Listo" y la flecha de atrás vuelven directamente
+   * a la comida.
+   */
+  const handleBack =
+    isEditingCategory ? onClose : goBack;
+
+  const handleClose =
+    isEditingCategory
+      ? onClose
+      : isLastStep
+        ? finish
+        : goNext;
+
+  const primaryButtonLabel =
+    isEditingCategory
+      ? "Listo"
+      : isLastStep
+        ? "Finalizar"
+        : "Siguiente";
 
   return (
     <div className="meal-builder-overlay">
@@ -204,7 +254,7 @@ export default function MealBuilder({
           <button
             type="button"
             className="meal-builder-back"
-            onClick={goBack}
+            onClick={handleBack}
             aria-label="Volver"
           >
             ←
@@ -221,7 +271,9 @@ export default function MealBuilder({
           </div>
 
           <span className="meal-builder-progress">
-            {step + 1}/4
+            {isEditingCategory
+              ? ""
+              : `${step}/${CATEGORIES.length}`}
           </span>
 
           <button
@@ -251,11 +303,8 @@ export default function MealBuilder({
                 selection
               )
             }
-            onClose={
-                isLastStep
-                    ? finish
-                    : goNext
-            }
+            onBack={handleBack}
+            onClose={handleClose}
             title={
               CATEGORY_LABELS[currentCategory]
             }
@@ -266,7 +315,7 @@ export default function MealBuilder({
           <button
             type="button"
             className="meal-builder-secondary"
-            onClick={goBack}
+            onClick={handleBack}
           >
             Anterior
           </button>
@@ -274,15 +323,9 @@ export default function MealBuilder({
           <button
             type="button"
             className="meal-builder-primary"
-            onClick={
-              isLastStep
-                ? finish
-                : goNext
-            }
+            onClick={handleClose}
           >
-            {isLastStep
-              ? "Finalizar"
-              : "Siguiente"}
+            {primaryButtonLabel}
           </button>
         </footer>
       </div>

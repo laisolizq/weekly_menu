@@ -100,16 +100,32 @@ export default function MealSlot({
   const [showBuilder, setShowBuilder] =
     useState(false);
 
+  const [editingCategory, setEditingCategory] =
+    useState<SelectionCategory | null>(null);
+
+  const openBuilder = (
+    category?: SelectionCategory
+  ) => {
+    setEditingCategory(category ?? null);
+    setShowBuilder(true);
+  };
+
+  const closeBuilder = () => {
+    setShowBuilder(false);
+    setEditingCategory(null);
+  };
+
   if (showBuilder) {
     return createPortal(
       <MealBuilder
         title={title}
         meal={meal}
         components={components}
+        initialCategory={editingCategory}
         onPeopleChange={onPeopleChange}
         onAddSelection={onAddSelection}
         onRemoveSelection={onRemoveSelection}
-        onClose={() => setShowBuilder(false)}
+        onClose={closeBuilder}
         onToggle={onToggle}
       />,
       document.body
@@ -187,9 +203,7 @@ export default function MealSlot({
             <button
               type="button"
               className="add-meal-button"
-              onClick={() =>
-                setShowBuilder(true)
-              }
+              onClick={() => openBuilder()}
             >
               <span className="add-meal-icon">
                 +
@@ -198,74 +212,73 @@ export default function MealSlot({
               <span>Añadir comida</span>
             </button>
           ) : (
-            <>
-              <div className="meal-summary">
-                {(
+            <div className="meal-summary">
+              {(
+                [
+                  ["carbs", meal.carbs],
+                  ["proteins", meal.proteins],
                   [
-                    ["carbs", meal.carbs],
-                    ["proteins", meal.proteins],
-                    [
-                      "vegetables",
-                      meal.vegetables,
-                    ],
-                    [
-                      "elaborations",
-                      meal.elaborations,
-                    ],
-                    ["extras", meal.extras],
-                  ] as [
-                    SelectionCategory,
-                    Selection[]
-                  ][]
-                ).map(
-                  ([category, selections]) => {
-                    if (
-                      selections.length === 0
-                    ) {
-                      return null;
-                    }
-
-                    return (
-                      <div
-                        className="meal-summary-row"
-                        key={category}
-                      >
-                        <span className="meal-summary-label">
-                          {
-                            CATEGORY_LABELS[
-                              category
-                            ]
-                          }
-                        </span>
-
-                        <span className="meal-summary-value">
-                          {selections
-                            .map(
-                              (selection) =>
-                                getSelectionName(
-                                  selection,
-                                  components
-                                )
-                            )
-                            .filter(Boolean)
-                            .join(" · ")}
-                        </span>
-                      </div>
-                    );
+                    "vegetables",
+                    meal.vegetables,
+                  ],
+                  [
+                    "elaborations",
+                    meal.elaborations,
+                  ],
+                  ["extras", meal.extras],
+                ] as [
+                  SelectionCategory,
+                  Selection[]
+                ][]
+              ).map(
+                ([category, selections]) => {
+                  if (
+                    selections.length === 0
+                  ) {
+                    return null;
                   }
-                )}
-              </div>
 
-              <button
-                type="button"
-                className="edit-meal-button"
-                onClick={() =>
-                  setShowBuilder(true)
+                  return (
+                    <button
+                      type="button"
+                      className="meal-summary-row"
+                      key={category}
+                      onClick={() =>
+                        openBuilder(category)
+                      }
+                    >
+                      <span className="meal-summary-label">
+                        {
+                          CATEGORY_LABELS[
+                            category
+                          ]
+                        }
+                      </span>
+
+                      <span className="meal-summary-value">
+                        {selections
+                          .map(
+                            (selection) =>
+                              getSelectionName(
+                                selection,
+                                components
+                              )
+                          )
+                          .filter(Boolean)
+                          .join(" · ")}
+                      </span>
+
+                      <span
+                        className="meal-summary-edit"
+                        aria-hidden="true"
+                      >
+                        ›
+                      </span>
+                    </button>
+                  );
                 }
-              >
-                Editar comida
-              </button>
-            </>
+              )}
+            </div>
           )}
         </div>
       )}

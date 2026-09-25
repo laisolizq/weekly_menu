@@ -16,9 +16,8 @@ interface ComponentSelectorProps {
   category: SelectionCategory;
   selected: Selection[];
   onSelect: (selection: Selection) => void;
-  onRemoveSelection: (
-    selection: Selection
-  ) => void;
+  onRemoveSelection: (selection: Selection) => void;
+  onBack: () => void;
   onClose: () => void;
   title: string;
 }
@@ -40,6 +39,7 @@ export default function ComponentSelector({
   selected,
   onSelect,
   onRemoveSelection,
+  onBack,
   onClose,
   title,
 }: ComponentSelectorProps) {
@@ -80,7 +80,7 @@ export default function ComponentSelector({
         <button
           type="button"
           className="component-selector-back"
-          onClick={onClose}
+          onClick={onBack}
         >
           ←
         </button>

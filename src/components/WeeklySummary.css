@@ -76,7 +76,7 @@
 
 .summary-day-name {
   display: flex;
-  align-items: center;
+  align-items: start;
   color: var(--rose-deep);
   font-size: 0.72rem;
   font-weight: 700;
@@ -95,11 +95,11 @@
 .summary-meal {
   display: grid;
   grid-template-columns: 22px minmax(0, 1fr);
-  align-items: center;
+  align-items: start;
   min-width: 0;
   color: var(--muted);
   font-size: 0.76rem;
-  line-height: 1.25;
+  line-height: 1.35;
 }
 
 .summary-meal-label {
@@ -109,9 +109,9 @@
 }
 
 .summary-meal span:last-child {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .summary-meal .has-recipe {
@@ -133,7 +133,7 @@
 
   .summary-meals {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 30px;
   }
 

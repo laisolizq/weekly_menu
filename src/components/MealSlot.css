@@ -279,6 +279,36 @@
   display: flex;
   align-items: baseline;
   gap: 10px;
+
+  width: 100%;
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+  color: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.meal-summary-row:hover {
+  opacity: 0.8;
+}
+
+.meal-summary-row:focus-visible {
+  outline: none;
+
+  border-radius: 7px;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(233, 140, 165, 0.1);
 }
 
 .meal-summary-label {
@@ -294,6 +324,7 @@
 
 .meal-summary-value {
   min-width: 0;
+  flex: 1;
 
   color: var(--ink);
 
@@ -301,44 +332,13 @@
   line-height: 1.35;
 }
 
-/* ─────────────────────────────
-   EDIT
-───────────────────────────── */
+.meal-summary-edit {
+  flex: 0 0 auto;
 
-.edit-meal-button {
-  display: block;
-
-  width: 100%;
-  margin-top: 8px;
-  padding: 7px;
-
-  border: 0;
-  border-radius: 9px;
-
-  background: transparent;
-  color: var(--muted);
-
-  font-size: 0.76rem;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition:
-    background 0.15s ease,
-    color 0.15s ease;
-}
-
-.edit-meal-button:hover {
-  background: rgba(247, 183, 197, 0.08);
   color: var(--rose-deep);
-}
 
-.edit-meal-button:focus-visible {
-  outline: none;
-
-  box-shadow:
-    0 0 0 3px
-    rgba(233, 140, 165, 0.1);
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 /* ─────────────────────────────
