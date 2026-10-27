@@ -1,3 +1,4 @@
+import CopyButton from "./CopyButton";
 import type {
   Component,
   DayPlan,
@@ -10,6 +11,7 @@ interface WeeklySummaryProps {
   week: DayPlan[];
   components: Component[];
   onClose: () => void;
+  onCopy: () => Promise<void>;
 }
 
 function getSelectionNames(
@@ -45,6 +47,7 @@ function getMealSelections(meal: Meal): Selection[] {
     ...meal.carbs,
     ...meal.proteins,
     ...meal.vegetables,
+    ...(meal.condiments ?? []),
     ...meal.elaborations,
     ...meal.extras,
   ];
@@ -59,10 +62,10 @@ function getMealText(
   const selections = getMealSelections(meal);
 
   if (selections.length === 0) {
-    return `${meal.people} personas · Sin asignar`;
+    return `${meal.people} ${meal.people === 1 ? 'persona' : 'personas'} · Sin asignar`;
   }
 
-  return `${meal.people} personas · ${getSelectionNames(
+  return `${meal.people} ${meal.people === 1 ? 'persona' : 'personas'} · ${getSelectionNames(
     selections,
     components
   )}`;
@@ -72,6 +75,7 @@ export default function WeeklySummary({
   week,
   components,
   onClose,
+  onCopy,
 }: WeeklySummaryProps) {
   return (
     <section className="weekly-summary">
@@ -84,14 +88,15 @@ export default function WeeklySummary({
           <h2>Esta semana</h2>
         </div>
 
-        <button
-          className="summary-close"
-          onClick={onClose}
-          aria-label="Cerrar resumen"
-        >
-          ×
-        </button>
+        <CopyButton onCopy={onCopy} label="Copiar semana" />
       </div>
+      <button
+          className="summary-back"
+          onClick={onClose}
+          aria-label="Volver a editar mi semana"
+        >
+          ← Volver a editar
+        </button>
 
       <div className="summary-table">
         {week.map((day) => {

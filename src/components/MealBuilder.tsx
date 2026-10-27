@@ -11,13 +11,15 @@ type SelectionCategory =
   | "carbs"
   | "proteins"
   | "vegetables"
-  | "elaborations"
+  | "condiments"
+      | "elaborations"
   | "extras";
 
 const CATEGORIES: SelectionCategory[] = [
   "carbs",
   "proteins",
   "vegetables",
+  "condiments",
   "elaborations",
   "extras",
 ];
@@ -29,7 +31,8 @@ const CATEGORY_LABELS: Record<
   carbs: "Hidratos",
   proteins: "Proteínas",
   vegetables: "Verduras",
-  elaborations: "Elaboración / Salsas",
+  condiments: "Salsas y condimentos",
+  elaborations: "Preparación",
   extras: "Extras",
 };
 
@@ -70,8 +73,9 @@ export default function MealBuilder({
    * 1 = hidratos
    * 2 = proteínas
    * 3 = verduras
-   * 4 = elaboración / salsas
-   * 5 = extras
+   * 4 = salsas y condimentos
+   * 5 = preparación
+   * 6 = extras
    */
   const [step, setStep] = useState(() => {
     if (!initialCategory) {

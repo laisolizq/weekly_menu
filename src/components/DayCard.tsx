@@ -24,6 +24,7 @@ interface DayCardProps {
       | "carbs"
       | "proteins"
       | "vegetables"
+      | "condiments"
       | "elaborations"
       | "extras",
     selection: Selection
@@ -34,6 +35,7 @@ interface DayCardProps {
       | "carbs"
       | "proteins"
       | "vegetables"
+      | "condiments"
       | "elaborations"
       | "extras",
     selection: Selection

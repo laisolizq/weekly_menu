@@ -10,6 +10,7 @@ export interface Component {
     | "CARB"
     | "PROTEIN"
     | "VEGETABLE"
+    | "CONDIMENT"
     | "ELABORATION"
     | "EXTRA";
   variants: ComponentVariant[];
@@ -26,6 +27,7 @@ export interface Meal {
   carbs: Selection[];
   proteins: Selection[];
   vegetables: Selection[];
+  condiments: Selection[];
   elaborations: Selection[];
   extras: Selection[];
 }

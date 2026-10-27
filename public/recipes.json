@@ -1,0 +1,3101 @@
+{
+  "version": 2,
+  "recipes": [
+    {
+      "id": "casa-salmo-amb-arros-i-algues",
+      "name": "Salmó amb arròs i algues",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "casa-algas"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-salmo-amb-arros-i-carbasso",
+      "name": "Salmó amb arròs i carbassó",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-salmo-amb-arros-i-brocoli",
+      "name": "Salmó amb arròs i bròcoli",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-salmo-amb-arros-soja-i-brocoli",
+      "name": "Salmó amb arròs, soja i bròcoli",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "seed-soja"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-salmo-amb-arros-i-esparrecs",
+      "name": "Salmó amb arròs i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pollastre-amb-arros-i-carbasso",
+      "name": "Pollastre amb arròs i carbassó",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pit-de-pollastre-amb-arros-i-brocoli",
+      "name": "Pit de pollastre amb arròs i bròcoli",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo",
+            "variantId": "seed-pollo-pechuga"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pit-de-pollastre-amb-arros-i-esparrecs",
+      "name": "Pit de pollastre amb arròs i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo",
+            "variantId": "seed-pollo-pechuga"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pollastre-al-curry-amb-arros",
+      "name": "Pollastre al curry amb arròs",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "seed-curry"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-pollastre-a-la-cervesa-amb-arros",
+      "name": "Pollastre a la cervesa amb arròs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "seed-cerveza"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-botifarra-a-la-cervesa-amb-arros",
+      "name": "Botifarra a la cervesa amb arròs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "casa-botifarra"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "seed-cerveza"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-llenties-amb-arros",
+      "name": "Llenties amb arròs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-lentejas",
+            "variantId": "seed-lentejas-lentejas"
+          },
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-llenties-amb-arros-i-brocoli",
+      "name": "Llenties amb arròs i bròcoli",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-lentejas",
+            "variantId": "seed-lentejas-lentejas"
+          },
+          {
+            "componentId": "seed-arroz"
+          }
+        ],
+        "proteins": [],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pasta-de-llenties-amb-pollastre-i-esparrecs",
+      "name": "Pasta de llenties amb pollastre i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-lentejas",
+            "variantId": "seed-lentejas-pasta-de-lentejas"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pasta-de-llenties-amb-gall-dindi-i-esparrecs",
+      "name": "Pasta de llenties amb gall dindi i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-lentejas",
+            "variantId": "seed-lentejas-pasta-de-lentejas"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pavo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pasta-de-llenties-amb-pollastre-i-brocoli",
+      "name": "Pasta de llenties amb pollastre i bròcoli",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-lentejas",
+            "variantId": "seed-lentejas-pasta-de-lentejas"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-hamburguesa-amb-esparrecs-i-pasta-de-llenties",
+      "name": "Hamburguesa amb espàrrecs i pasta de llenties",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-lentejas",
+            "variantId": "seed-lentejas-pasta-de-lentejas"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-hamburguesa"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-nyoquis-amb-gall-dindi-i-esparrecs",
+      "name": "Nyoquis amb gall dindi i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-noquis"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pavo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-nyoquis-amb-pollastre-a-la-planxa-i-esparrecs",
+      "name": "Nyoquis amb pollastre a la planxa i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-noquis"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "seed-a-la-plancha"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-nyoquis-amb-salmo-i-carbasso",
+      "name": "Nyoquis amb salmó i carbassó",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-noquis"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-nyoquis-amb-salmo-i-esparrecs",
+      "name": "Nyoquis amb salmó i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-noquis"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-nyoquis-amb-brocoli-i-salsitxes-de-pollastre",
+      "name": "Nyoquis amb bròcoli i salsitxes de pollastre",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-noquis"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-salchichas",
+            "variantId": "seed-salchichas-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pasta-amb-llom-i-xampinyons",
+      "name": "Pasta amb llom i xampinyons",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-pasta"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-cerdo",
+            "variantId": "seed-cerdo-lomo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-champinones"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-fideus-amb-gambetes-i-brocoli",
+      "name": "Fideus amb gambetes i bròcoli",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-fideos-noodles"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-gambas-langostinos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-fideus-amb-gambetes-i-esparrecs",
+      "name": "Fideus amb gambetes i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-fideos-noodles"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-gambas-langostinos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pasta-darros-amb-pollastre-pastanaga-i-carbasso",
+      "name": "Pasta d’arròs amb pollastre, pastanaga i carbassó",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "casa-pasta-de-arroz"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-zanahoria"
+          },
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-ous-amb-patata-i-brocoli",
+      "name": "Ous amb patata i bròcoli",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-ous-amb-patata-i-esparrecs",
+      "name": "Ous amb patata i espàrrecs",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-ous-amb-carbasso-i-moniato",
+      "name": "Ous amb carbassó i moniato",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pollastre-al-forn-amb-patata-i-moniato",
+      "name": "Pollastre al forn amb patata i moniato",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          },
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [
+          {
+            "componentId": "seed-al-horno"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pollastre-al-forn-amb-moniato-i-carbasso",
+      "name": "Pollastre al forn amb moniato i carbassó",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "seed-al-horno"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-contracuixa-a-la-planxa-amb-patata-i-esparrecs",
+      "name": "Contracuixa a la planxa amb patata i espàrrecs",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo",
+            "variantId": "seed-pollo-contramuslo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "seed-a-la-plancha"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-aletes-amb-patata-i-esparrecs",
+      "name": "Aletes amb patata i espàrrecs",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo",
+            "variantId": "seed-pollo-alitas"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-peix-blanc-al-forn-amb-patata-i-carbasso",
+      "name": "Peix blanc al forn amb patata i carbassó",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-pescado-blanco"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "seed-al-horno"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-peix-blanc-amb-carbasso-i-moniato",
+      "name": "Peix blanc amb carbassó i moniato",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-pescado-blanco"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      },
+      "notes": "Esta guarnición es vuestro «carbo»: calabacín y boniato."
+    },
+    {
+      "id": "casa-peix-blanc-amb-brocoli-i-moniato",
+      "name": "Peix blanc amb bròcoli i moniato",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-pescado-blanco"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-peix-arrebossat-amb-brocoli",
+      "name": "Peix arrebossat amb bròcoli",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-pescado-rebozado"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-salmo-amb-brocoli-i-moniato",
+      "name": "Salmó amb bròcoli i moniato",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-salmo-amb-carbasso-i-patata-a-lairfryer",
+      "name": "Salmó amb carbassó i patata a l’airfryer",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "casa-airfryer"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-llom-amb-xampinyons-i-carbasso",
+      "name": "Llom amb xampinyons i carbassó",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-cerdo",
+            "variantId": "seed-cerdo-lomo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-champinones"
+          },
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-pollastre-a-la-planxa-amb-brocoli",
+      "name": "Pollastre a la planxa amb bròcoli",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "seed-a-la-plancha"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-gall-dindi-amb-patata-i-carbasso",
+      "name": "Gall dindi amb patata i carbassó",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pavo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-hamburguesa-amb-ou-i-bacon",
+      "name": "Hamburguesa amb ou i bacon",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-hamburguesa"
+          },
+          {
+            "componentId": "seed-huevos"
+          },
+          {
+            "componentId": "seed-bacon"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-hamburguesa-amb-ou-i-esparrecs",
+      "name": "Hamburguesa amb ou i espàrrecs",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-hamburguesa"
+          },
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-hamburguesa-amb-ou-i-xampinyons",
+      "name": "Hamburguesa amb ou i xampinyons",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-hamburguesa"
+          },
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-champinones"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-hamburguesa-de-pollastre-amb-ou-i-moniato",
+      "name": "Hamburguesa de pollastre amb ou i moniato",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-hamburguesa",
+            "variantId": "seed-hamburguesa-pollo"
+          },
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-fajitas-de-pollastre-amb-carbasso",
+      "name": "Fajitas de pollastre amb carbassó",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-fajitas"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-fajita-de-pollastre-amb-alberginia",
+      "name": "Fajita de pollastre amb albergínia",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-fajitas"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-berenjena"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-truita-despinacs-amb-gambetes-i-moniato",
+      "name": "Truita d’espinacs amb gambetes i moniato",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-huevos"
+          },
+          {
+            "componentId": "seed-gambas-langostinos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-espinacas"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "casa-tortilla"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-truita-despinacs-amb-moniato",
+      "name": "Truita d’espinacs amb moniato",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-espinacas"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "casa-tortilla"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-salmo-fumat-amb-ou-i-xampinyons",
+      "name": "Salmó fumat amb ou i xampinyons",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "casa-salmon-ahumado"
+          },
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-champinones"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-salmo-fumat-amb-ou",
+      "name": "Salmó fumat amb ou",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "casa-salmon-ahumado"
+          },
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-cigrons-amb-ceba-pernil-i-xampinyons",
+      "name": "Cigrons Madeira (sense tomàquet)",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-garbanzos",
+            "variantId": "seed-garbanzos-garbanzos"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-jamon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-cebolla"
+          },
+          {
+            "componentId": "seed-champinones"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      },
+      "notes": "Garbanzos con champiñones, jamón y cebolla. La opción con tomate está disponible por separado."
+    },
+    {
+      "id": "casa-cigrons-amb-pernil-carbasso-i-pastanaga",
+      "name": "Cigrons amb pernil, carbassó i pastanaga",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-garbanzos",
+            "variantId": "seed-garbanzos-garbanzos"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-jamon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          },
+          {
+            "componentId": "seed-zanahoria"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-saltejat-de-gambes-esparrecs-i-ou",
+      "name": "Saltejat de gambes, espàrrecs i ou",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-gambas-langostinos"
+          },
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "seed-salteado"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-arros-de-coliflor-amb-gambetes-ou-i-curry",
+      "name": "Arròs de coliflor amb gambetes, ou i curry",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-gambas-langostinos"
+          },
+          {
+            "componentId": "seed-huevos"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-coliflor"
+          },
+          {
+            "componentId": "casa-cebolleta"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "seed-curry"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-cigrons-madeira-amb-tomaquet",
+      "name": "Cigrons Madeira amb tomàquet",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-garbanzos",
+            "variantId": "seed-garbanzos-garbanzos"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-jamon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-champinones"
+          },
+          {
+            "componentId": "seed-cebolla"
+          },
+          {
+            "componentId": "seed-tomate"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-sopa-amb-mandonguilles-de-pollastre",
+      "name": "Sopa amb mandonguilles de pollastre",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-pasta",
+            "variantId": "seed-pasta-para-sopa"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-albondigas",
+            "variantId": "seed-albondigas-pollo"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-sopa-amb-mandonguilles-de-pollastre-i-brocoli",
+      "name": "Sopa amb mandonguilles de pollastre i bròcoli",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-pasta",
+            "variantId": "seed-pasta-para-sopa"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-albondigas",
+            "variantId": "seed-albondigas-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-sopa-amb-mandonguilles-de-pollastre-i-esparrecs",
+      "name": "Sopa amb mandonguilles de pollastre i espàrrecs",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-pasta",
+            "variantId": "seed-pasta-para-sopa"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-albondigas",
+            "variantId": "seed-albondigas-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-sopa-amb-mandonguilles-de-pollastre-i-carbasso",
+      "name": "Sopa amb mandonguilles de pollastre i carbassó",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-pasta",
+            "variantId": "seed-pasta-para-sopa"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-albondigas",
+            "variantId": "seed-albondigas-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-sopa-amb-mandonguilles-de-pollastre-i-xampinyons",
+      "name": "Sopa amb mandonguilles de pollastre i xampinyons",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-pasta",
+            "variantId": "seed-pasta-para-sopa"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-albondigas",
+            "variantId": "seed-albondigas-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-champinones"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "casa-crema-de-pollastre",
+      "name": "Crema de pollastre",
+      "mealTypes": [
+        "lunch",
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [],
+        "proteins": [
+          {
+            "componentId": "seed-pollo",
+            "variantId": "seed-pollo-contramuslo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-cebolla"
+          },
+          {
+            "componentId": "seed-puerro"
+          },
+          {
+            "componentId": "seed-zanahoria"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      }
+    },
+    {
+      "id": "casa-peix-blanc-amb-carbopa",
+      "name": "Peix blanc amb carbopa",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          },
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-pescado-blanco"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      },
+      "notes": "Carbopa: calabacín, boniato y patata."
+    },
+    {
+      "id": "casa-llom-adobat-amb-carbopa",
+      "name": "Llom adobat amb carbopa",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          },
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-cerdo",
+            "variantId": "seed-cerdo-lomo-adobado"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      },
+      "notes": "Carbopa: calabacín, boniato y patata."
+    },
+    {
+      "id": "casa-pollastre-al-forn-amb-carbopa",
+      "name": "Pollastre al forn amb carbopa",
+      "mealTypes": [
+        "lunch"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          },
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [
+          {
+            "componentId": "seed-al-horno"
+          }
+        ],
+        "extras": [],
+        "condiments": []
+      },
+      "notes": "Carbopa: calabacín, boniato y patata."
+    },
+    {
+      "id": "casa-salmo-amb-carbopa",
+      "name": "Salmó amb carbopa",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "seed-boniato"
+          },
+          {
+            "componentId": "seed-patata"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-calabacin"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": []
+      },
+      "notes": "Carbopa: calabacín, boniato y patata."
+    },
+    {
+      "id": "casa-semola-amb-peix",
+      "name": "Sèmola amb peix",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "casa-semola-de-verduras-preparado"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo",
+            "variantId": "casa-caldo-pollo"
+          }
+        ]
+      },
+      "notes": "Preparar la sémola de verduras con el agua de hervir el brócoli y un poco de caldo de pollo. Aprovechar el día que se prepara brócoli; no hace falta comprarlo de nuevo si ya se guarda el caldo."
+    },
+    {
+      "id": "casa-semola-amb-hamburguesa-de-pollastre",
+      "name": "Sèmola amb hamburguesa de pollastre",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "casa-semola-de-verduras-preparado"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-hamburguesa",
+            "variantId": "seed-hamburguesa-pollo"
+          }
+        ],
+        "vegetables": [],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo",
+            "variantId": "casa-caldo-pollo"
+          }
+        ]
+      },
+      "notes": "Preparar la sémola de verduras con el agua de hervir el brócoli y un poco de caldo de pollo. Aprovechar el día que se prepara brócoli; no hace falta comprarlo de nuevo si ya se guarda el caldo."
+    },
+    {
+      "id": "casa-salmo-amb-brocoli-i-semola",
+      "name": "Salmó amb bròcoli i sèmola",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "casa-semola-de-verduras-preparado"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo",
+            "variantId": "casa-caldo-pollo"
+          }
+        ]
+      },
+      "notes": "Preparar la sémola de verduras con el agua de hervir el brócoli y un poco de caldo de pollo. Aprovechar el día que se prepara brócoli; no hace falta comprarlo de nuevo si ya se guarda el caldo."
+    },
+    {
+      "id": "casa-salmo-amb-esparrecs-i-semola",
+      "name": "Salmó amb espàrrecs i sèmola",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "casa-semola-de-verduras-preparado"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pescado",
+            "variantId": "seed-pescado-salmon"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-esparragos-verdes"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo",
+            "variantId": "casa-caldo-pollo"
+          }
+        ]
+      },
+      "notes": "Preparar la sémola de verduras con el agua de hervir el brócoli y un poco de caldo de pollo. Aprovechar el día que se prepara brócoli; no hace falta comprarlo de nuevo si ya se guarda el caldo."
+    },
+    {
+      "id": "casa-pollastre-amb-brocoli-i-semola",
+      "name": "Pollastre amb bròcoli i sèmola",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "casa-semola-de-verduras-preparado"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-pollo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo",
+            "variantId": "casa-caldo-pollo"
+          }
+        ]
+      },
+      "notes": "Preparar la sémola de verduras con el agua de hervir el brócoli y un poco de caldo de pollo. Aprovechar el día que se prepara brócoli; no hace falta comprarlo de nuevo si ya se guarda el caldo."
+    },
+    {
+      "id": "casa-llom-amb-brocoli-i-semola",
+      "name": "Llom amb bròcoli i sèmola",
+      "mealTypes": [
+        "dinner"
+      ],
+      "meal": {
+        "enabled": true,
+        "people": 1,
+        "carbs": [
+          {
+            "componentId": "casa-semola-de-verduras-preparado"
+          }
+        ],
+        "proteins": [
+          {
+            "componentId": "seed-cerdo",
+            "variantId": "seed-cerdo-lomo"
+          }
+        ],
+        "vegetables": [
+          {
+            "componentId": "seed-brocoli"
+          }
+        ],
+        "elaborations": [],
+        "extras": [],
+        "condiments": [
+          {
+            "componentId": "casa-caldo",
+            "variantId": "casa-caldo-pollo"
+          }
+        ]
+      },
+      "notes": "Preparar la sémola de verduras con el agua de hervir el brócoli y un poco de caldo de pollo. Aprovechar el día que se prepara brócoli; no hace falta comprarlo de nuevo si ya se guarda el caldo."
+    }
+  ],
+  "components": [
+    {
+      "id": "seed-arroz",
+      "name": "Arroz",
+      "category": "CARB",
+      "variants": [
+        {
+          "id": "seed-arroz-blanco",
+          "name": "Blanco"
+        },
+        {
+          "id": "seed-arroz-integral",
+          "name": "Integral"
+        },
+        {
+          "id": "seed-arroz-basmati",
+          "name": "Basmati"
+        }
+      ]
+    },
+    {
+      "id": "seed-pasta",
+      "name": "Pasta",
+      "category": "CARB",
+      "variants": [
+        {
+          "id": "seed-pasta-blanca",
+          "name": "Blanca"
+        },
+        {
+          "id": "seed-pasta-integral",
+          "name": "Integral"
+        },
+        {
+          "id": "seed-pasta-para-sopa",
+          "name": "Para sopa"
+        }
+      ]
+    },
+    {
+      "id": "seed-lentejas",
+      "name": "Lentejas",
+      "category": "CARB",
+      "variants": [
+        {
+          "id": "seed-lentejas-lentejas",
+          "name": "Lentejas"
+        },
+        {
+          "id": "seed-lentejas-pasta-de-lentejas",
+          "name": "Pasta de lentejas"
+        }
+      ]
+    },
+    {
+      "id": "seed-garbanzos",
+      "name": "Garbanzos",
+      "category": "CARB",
+      "variants": [
+        {
+          "id": "seed-garbanzos-garbanzos",
+          "name": "Garbanzos"
+        },
+        {
+          "id": "seed-garbanzos-pasta-de-garbanzos",
+          "name": "Pasta de garbanzos"
+        }
+      ]
+    },
+    {
+      "id": "seed-patata",
+      "name": "Patata",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-boniato",
+      "name": "Boniato",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-trigo-tierno",
+      "name": "Trigo tierno",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-cuscus",
+      "name": "Cuscús",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-quinoa",
+      "name": "Quinoa",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-fideos-noodles",
+      "name": "Fideos / noodles",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-fajitas",
+      "name": "Fajitas",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-pan",
+      "name": "Pan",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-avena",
+      "name": "Avena",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-noquis",
+      "name": "Ñoquis",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "seed-pollo",
+      "name": "Pollo",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-pollo-pechuga",
+          "name": "Pechuga"
+        },
+        {
+          "id": "seed-pollo-pechuga-fileteada",
+          "name": "Pechuga fileteada"
+        },
+        {
+          "id": "seed-pollo-contramuslo",
+          "name": "Contramuslo"
+        },
+        {
+          "id": "seed-pollo-contramuslo-con-piel",
+          "name": "Contramuslo con piel"
+        },
+        {
+          "id": "seed-pollo-alitas",
+          "name": "Alitas"
+        },
+        {
+          "id": "seed-pollo-cuartos-traseros",
+          "name": "Cuartos traseros"
+        },
+        {
+          "id": "seed-pollo-muslos",
+          "name": "Muslos"
+        }
+      ]
+    },
+    {
+      "id": "seed-pavo",
+      "name": "Pavo",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-pavo-filete-de-pechuga",
+          "name": "Filete de pechuga"
+        },
+        {
+          "id": "seed-pavo-filete-de-pechuga-adobado",
+          "name": "Filete de pechuga adobado"
+        }
+      ]
+    },
+    {
+      "id": "seed-cerdo",
+      "name": "Cerdo",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-cerdo-lomo",
+          "name": "Lomo"
+        },
+        {
+          "id": "seed-cerdo-lomo-adobado",
+          "name": "Lomo adobado"
+        },
+        {
+          "id": "seed-cerdo-solomillo",
+          "name": "Solomillo"
+        },
+        {
+          "id": "seed-cerdo-costillas",
+          "name": "Costillas"
+        }
+      ]
+    },
+    {
+      "id": "seed-ternera",
+      "name": "Ternera",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-ternera-filete",
+          "name": "Filete"
+        },
+        {
+          "id": "seed-ternera-entrecot",
+          "name": "Entrecot"
+        },
+        {
+          "id": "seed-ternera-solomillo",
+          "name": "Solomillo"
+        },
+        {
+          "id": "seed-ternera-carne-para-guisar",
+          "name": "Carne para guisar"
+        }
+      ]
+    },
+    {
+      "id": "seed-pescado",
+      "name": "Pescado",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-pescado-pescado-blanco",
+          "name": "Pescado blanco"
+        },
+        {
+          "id": "seed-pescado-salmon",
+          "name": "Salmón"
+        },
+        {
+          "id": "seed-pescado-pescado-rebozado",
+          "name": "Pescado rebozado"
+        },
+        {
+          "id": "seed-pescado-merluza",
+          "name": "Merluza"
+        },
+        {
+          "id": "seed-pescado-bacalao",
+          "name": "Bacalao"
+        },
+        {
+          "id": "seed-pescado-atun",
+          "name": "Atún"
+        },
+        {
+          "id": "seed-pescado-dorada",
+          "name": "Dorada"
+        },
+        {
+          "id": "seed-pescado-lubina",
+          "name": "Lubina"
+        },
+        {
+          "id": "seed-pescado-pescado-azul",
+          "name": "Pescado azul"
+        }
+      ]
+    },
+    {
+      "id": "seed-gambas-langostinos",
+      "name": "Gambas / langostinos",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "seed-calamares",
+      "name": "Calamares",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "seed-huevos",
+      "name": "Huevos",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "seed-bacon",
+      "name": "Bacon",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-bacon-a-tacos",
+          "name": "A tacos"
+        },
+        {
+          "id": "seed-bacon-a-tiras",
+          "name": "A tiras"
+        }
+      ]
+    },
+    {
+      "id": "seed-jamon",
+      "name": "Jamón",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-jamon-a-taquitos-pequenos",
+          "name": "A taquitos pequeños"
+        },
+        {
+          "id": "seed-jamon-a-taquitos-grandes",
+          "name": "A taquitos grandes"
+        },
+        {
+          "id": "seed-jamon-a-tiras",
+          "name": "A tiras"
+        }
+      ]
+    },
+    {
+      "id": "seed-frankfurt",
+      "name": "Frankfurt",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "seed-salchichas",
+      "name": "Salchichas",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-salchichas-cerdo",
+          "name": "Cerdo"
+        },
+        {
+          "id": "seed-salchichas-ternera",
+          "name": "Ternera"
+        },
+        {
+          "id": "seed-salchichas-pollo",
+          "name": "Pollo"
+        },
+        {
+          "id": "seed-salchichas-pavo",
+          "name": "Pavo"
+        }
+      ]
+    },
+    {
+      "id": "seed-hamburguesa",
+      "name": "Hamburguesa",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-hamburguesa-cerdo",
+          "name": "Cerdo"
+        },
+        {
+          "id": "seed-hamburguesa-ternera",
+          "name": "Ternera"
+        },
+        {
+          "id": "seed-hamburguesa-pollo",
+          "name": "Pollo"
+        },
+        {
+          "id": "seed-hamburguesa-pavo",
+          "name": "Pavo"
+        }
+      ]
+    },
+    {
+      "id": "seed-albondigas",
+      "name": "Albóndigas",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-albondigas-pollo",
+          "name": "Pollo"
+        },
+        {
+          "id": "seed-albondigas-cerdo",
+          "name": "Cerdo"
+        },
+        {
+          "id": "seed-albondigas-ternera",
+          "name": "Ternera"
+        }
+      ]
+    },
+    {
+      "id": "seed-carne-picada",
+      "name": "Carne picada",
+      "category": "PROTEIN",
+      "variants": [
+        {
+          "id": "seed-carne-picada-pollo",
+          "name": "Pollo"
+        },
+        {
+          "id": "seed-carne-picada-ternera",
+          "name": "Ternera"
+        },
+        {
+          "id": "seed-carne-picada-cerdo",
+          "name": "Cerdo"
+        },
+        {
+          "id": "seed-carne-picada-pavo",
+          "name": "Pavo"
+        }
+      ]
+    },
+    {
+      "id": "seed-atun-en-lata",
+      "name": "Atún en lata",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "seed-sardinas",
+      "name": "Sardinas",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "seed-tofu",
+      "name": "Tofu",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "seed-calabacin",
+      "name": "Calabacín",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-esparragos-verdes",
+      "name": "Espárragos verdes",
+      "category": "VEGETABLE",
+      "variants": [
+        {
+          "id": "seed-esparragos-verdes-finos",
+          "name": "Finos"
+        },
+        {
+          "id": "seed-esparragos-verdes-gordos",
+          "name": "Gordos"
+        }
+      ]
+    },
+    {
+      "id": "seed-brocoli",
+      "name": "Brócoli",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-champinones",
+      "name": "Champiñones",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-setas-variadas",
+      "name": "Setas variadas",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-pimiento",
+      "name": "Pimiento",
+      "category": "VEGETABLE",
+      "variants": [
+        {
+          "id": "seed-pimiento-rojo",
+          "name": "Rojo"
+        },
+        {
+          "id": "seed-pimiento-verde",
+          "name": "Verde"
+        }
+      ]
+    },
+    {
+      "id": "seed-coliflor",
+      "name": "Coliflor",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-zanahoria",
+      "name": "Zanahoria",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-berenjena",
+      "name": "Berenjena",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-puerro",
+      "name": "Puerro",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-apio",
+      "name": "Apio",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-cebolla",
+      "name": "Cebolla",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-ajo",
+      "name": "Ajo",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-espinacas",
+      "name": "Espinacas",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-judias-verdes",
+      "name": "Judías verdes",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-guisantes",
+      "name": "Guisantes",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-maiz",
+      "name": "Maíz",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-tomate",
+      "name": "Tomate",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-lechuga",
+      "name": "Lechuga",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-alcachofa",
+      "name": "Alcachofa",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-acelgas",
+      "name": "Acelgas",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "seed-curry",
+      "name": "Curry",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-soja",
+      "name": "Soja",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-sesamo",
+      "name": "Sésamo",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-teriyaki",
+      "name": "Teriyaki",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-mostaza",
+      "name": "Mostaza",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-miel-y-mostaza",
+      "name": "Miel y mostaza",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-pesto",
+      "name": "Pesto",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-salsa-de-tomate",
+      "name": "Salsa de tomate",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-cerveza",
+      "name": "Cerveza",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-vino-blanco",
+      "name": "Vino blanco",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-vino-tinto",
+      "name": "Vino tinto",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-guisado",
+      "name": "Guisado",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-estofado",
+      "name": "Estofado",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-salteado",
+      "name": "Salteado",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-wok",
+      "name": "Wok",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-al-horno",
+      "name": "Al horno",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-a-la-plancha",
+      "name": "A la plancha",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-a-la-parrilla",
+      "name": "A la parrilla",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-rebozado",
+      "name": "Rebozado",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "seed-ajo-y-perejil",
+      "name": "Ajo y perejil",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-limon",
+      "name": "Limón",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-miel",
+      "name": "Miel",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-picante",
+      "name": "Picante",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-especias",
+      "name": "Especias",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-hierbas-aromaticas",
+      "name": "Hierbas aromáticas",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-preparado-para-lentejas",
+      "name": "Preparado para lentejas",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-preparado-de-caldo",
+      "name": "Preparado de caldo",
+      "category": "CONDIMENT",
+      "variants": []
+    },
+    {
+      "id": "seed-tortilla-de-patata-preparada",
+      "name": "Tortilla de patata preparada",
+      "category": "EXTRA",
+      "variants": []
+    },
+    {
+      "id": "casa-algas",
+      "name": "Algas",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "casa-salmon-ahumado",
+      "name": "Salmón ahumado",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "casa-botifarra",
+      "name": "Botifarra",
+      "category": "PROTEIN",
+      "variants": []
+    },
+    {
+      "id": "casa-tortilla",
+      "name": "Tortilla",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "casa-revuelto",
+      "name": "Revuelto",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "casa-airfryer",
+      "name": "Airfryer",
+      "category": "ELABORATION",
+      "variants": []
+    },
+    {
+      "id": "casa-pasta-de-arroz",
+      "name": "Pasta de arroz",
+      "category": "CARB",
+      "variants": []
+    },
+    {
+      "id": "casa-cebolleta",
+      "name": "Cebolleta",
+      "category": "VEGETABLE",
+      "variants": []
+    },
+    {
+      "id": "casa-caldo",
+      "name": "Caldo",
+      "category": "CONDIMENT",
+      "variants": [
+        {
+          "id": "casa-caldo-pollo",
+          "name": "Pollo"
+        }
+      ]
+    },
+    {
+      "id": "casa-semola-de-verduras-preparado",
+      "name": "Sémola de verduras (preparado)",
+      "category": "CARB",
+      "variants": []
+    }
+  ]
+}

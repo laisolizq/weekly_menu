@@ -8,7 +8,8 @@ type SelectionCategory =
   | "carbs"
   | "proteins"
   | "vegetables"
-  | "elaborations"
+  | "condiments"
+      | "elaborations"
   | "extras";
 
 interface ComponentSelectorProps {
@@ -29,6 +30,7 @@ const COMPONENT_CATEGORIES: Record<
   carbs: "CARB",
   proteins: "PROTEIN",
   vegetables: "VEGETABLE",
+  condiments: "CONDIMENT",
   elaborations: "ELABORATION",
   extras: "EXTRA",
 };

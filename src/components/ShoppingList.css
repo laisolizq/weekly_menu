@@ -88,3 +88,15 @@
     flex-direction: column;
   }
 }
+
+.shopping-list-heading { flex-direction: row; align-items: center; }
+.shopping-list h2 { color: var(--ink); text-transform: none; letter-spacing: -.025em; font-size: 1.1rem; }
+.shopping-list table { min-width: 0; }
+@media (max-width: 480px) {
+  .shopping-list { padding: 18px 12px; }
+  .shopping-list th, .shopping-list td { padding: 10px 5px; font-size: .75rem; }
+  .shopping-list th { font-size: .6rem; letter-spacing: .02em; }
+  .shopping-list-heading { gap: 8px; }
+  .shopping-list h2 { font-size: .98rem; }
+  .shopping-list .copy-button { padding: 10px; font-size: .73rem; }
+}

@@ -4,7 +4,7 @@ import "./RecipeManager.css";
 
 interface RecipeManagerProps {
   components: Component[];
-  onAddComponent: (component: Component) => void;
+  onAddComponent: (component: Component) => Promise<void>;
 }
 
 const CATEGORY_OPTIONS: {
@@ -14,7 +14,8 @@ const CATEGORY_OPTIONS: {
   { value: "CARB", label: "Hidrato" },
   { value: "PROTEIN", label: "Proteína" },
   { value: "VEGETABLE", label: "Verdura" },
-  { value: "ELABORATION", label: "Elaboración" },
+  { value: "CONDIMENT", label: "Salsas y condimentos" },
+  { value: "ELABORATION", label: "Preparación (no se compra)" },
   { value: "EXTRA", label: "Extra" },
 ];
 
@@ -73,9 +74,11 @@ export default function RecipeManager({
     useState<Component["category"]>("CARB");
   const [variantsText, setVariantsText] =
     useState("");
+  const [saving, setSaving] = useState(false);
+  const [search, setSearch] = useState("");
   const [message, setMessage] = useState("");
 
-  const addComponent = (
+  const addComponent = async (
     event: React.FormEvent<HTMLFormElement>
   ) => {
     event.preventDefault();
@@ -99,6 +102,11 @@ export default function RecipeManager({
       return;
     }
 
+    if (components.some(c => c.name.trim().toLocaleLowerCase() === cleanName.toLocaleLowerCase() && c.category === category)) {
+      setMessage("Ya existe un componente con ese nombre en esta categoría.");
+      return;
+    }
+
     const component: Component = {
       id: createComponentId(
         cleanName,
@@ -109,13 +117,17 @@ export default function RecipeManager({
       variants,
     };
 
-    onAddComponent(component);
-
-    setName("");
-    setVariantsText("");
-    setMessage(
-      "Componente añadido. Descarga el JSON cuando termines."
-    );
+    setSaving(true);
+    try {
+      await onAddComponent(component);
+      setName("");
+      setVariantsText("");
+      setMessage(`${cleanName} añadido. Ya puedes usarlo en tus recetas.`);
+    } catch {
+      setMessage("No se pudo guardar el componente. Inténtalo de nuevo.");
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -131,7 +143,7 @@ export default function RecipeManager({
 
         <button
           type="button"
-          className="download-json-button"
+          className="button-secondary"
           onClick={() =>
             downloadComponents(components)
           }
@@ -140,6 +152,7 @@ export default function RecipeManager({
         </button>
       </div>
 
+      <p>Añade ingredientes, salsas y formas de preparación a tu catálogo. Salsas, condimentos y preparados se incluyen en la compra. Las formas de preparación (horno, plancha, salteado…) no. Se guardan en este navegador.</p>
       <form
         className="recipe-form"
         onSubmit={addComponent}
@@ -148,6 +161,7 @@ export default function RecipeManager({
           Nombre del componente
 
           <input
+            required
             value={name}
             onChange={(event) =>
               setName(event.target.value)
@@ -179,7 +193,7 @@ export default function RecipeManager({
         </label>
 
         <label>
-          Variantes
+          Variantes (opcional)
 
           <textarea
             value={variantsText}
@@ -195,14 +209,15 @@ export default function RecipeManager({
 
         <button
           type="submit"
-          className="add-recipe-button"
+          className="button-primary"
+          disabled={saving}
         >
-          Añadir componente
+          {saving ? "Guardando…" : "Añadir componente"}
         </button>
       </form>
 
       {message && (
-        <p className="recipe-form-message">
+        <p className="recipe-form-message" role="status">
           {message}
         </p>
       )}
@@ -213,8 +228,11 @@ export default function RecipeManager({
           <span>{components.length}</span>
         </div>
 
+        <label className="catalogue-search">Buscar en el catálogo
+          <input type="search" value={search} onChange={e => setSearch(e.target.value)} placeholder="Ej. arroz, pollo, pesto…" />
+        </label>
         <div className="recipe-catalogue-list">
-          {components.map((component) => (
+          {components.filter(c => c.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())).map((component) => (
             <div
               className="recipe-catalogue-item"
               key={component.id}

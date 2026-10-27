@@ -1,3 +1,4 @@
+import { migrateLegacyComponent } from "./categoryMigration";
 import Dexie, { type Table } from "dexie";
 import type { Component } from "../types/recipe";
 
@@ -19,6 +20,11 @@ export class LocalDatabase extends Dexie {
     this.version(3).stores({
       components: "id",
       syncQueue: "id",
+    });
+    this.version(4).stores({ components: "id", syncQueue: "id" }).upgrade(async transaction => {
+      await transaction.table<Component, string>('components').toCollection().modify(component => {
+        component.category = migrateLegacyComponent(component).category;
+      });
     });
   }
 }

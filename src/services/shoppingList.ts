@@ -16,7 +16,7 @@ const CATEGORY_ORDER: Component["category"][] = [
   "CARB",
   "PROTEIN",
   "VEGETABLE",
-  "ELABORATION",
+  "CONDIMENT",
   "EXTRA",
 ];
 
@@ -45,6 +45,7 @@ export function generateShoppingList(
         ...meal.carbs,
         ...meal.proteins,
         ...meal.vegetables,
+        ...(meal.condiments ?? []),
         ...meal.elaborations,
         ...meal.extras,
       ];
@@ -55,7 +56,7 @@ export function generateShoppingList(
             item.id === selection.componentId
         );
 
-        if (!component) continue;
+        if (!component || component.category === "ELABORATION") continue;
 
         const variant = selection.variantId
           ? component.variants.find(

@@ -22,6 +22,7 @@ interface MealSlotProps {
       | "carbs"
       | "proteins"
       | "vegetables"
+      | "condiments"
       | "elaborations"
       | "extras",
     selection: Selection
@@ -31,6 +32,7 @@ interface MealSlotProps {
       | "carbs"
       | "proteins"
       | "vegetables"
+      | "condiments"
       | "elaborations"
       | "extras",
     selection: Selection
@@ -41,7 +43,8 @@ type SelectionCategory =
   | "carbs"
   | "proteins"
   | "vegetables"
-  | "elaborations"
+  | "condiments"
+      | "elaborations"
   | "extras";
 
 const CATEGORY_LABELS: Record<
@@ -51,7 +54,8 @@ const CATEGORY_LABELS: Record<
   carbs: "Hidratos",
   proteins: "Proteínas",
   vegetables: "Verduras",
-  elaborations: "Elaboración",
+  condiments: "Salsas y condimentos",
+  elaborations: "Preparación",
   extras: "Extras",
 };
 
@@ -83,6 +87,7 @@ function getMealSelections(meal: Meal) {
     ...meal.carbs,
     ...meal.proteins,
     ...meal.vegetables,
+    ...(meal.condiments ?? []),
     ...meal.elaborations,
     ...meal.extras,
   ];
@@ -225,6 +230,7 @@ export default function MealSlot({
                     "elaborations",
                     meal.elaborations,
                   ],
+                  ["condiments", meal.condiments],
                   ["extras", meal.extras],
                 ] as [
                   SelectionCategory,

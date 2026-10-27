@@ -141,3 +141,8 @@
     flex: 1;
   }
 }
+
+.summary-header { gap: 12px; }
+.summary-back { padding: 8px 0 18px; background: transparent; border: 0; color: #71575e; font-size: .82rem; }
+.summary-back:hover { text-decoration: underline; text-underline-offset: 4px; }
+.summary-day { padding: 12px 0; }

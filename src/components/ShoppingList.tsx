@@ -1,8 +1,11 @@
+import { Fragment } from "react";
+import CopyButton from "./CopyButton";
 import type { ShoppingItem } from "../services/shoppingList";
 import "./ShoppingList.css";
 
 interface ShoppingListProps {
   items: ShoppingItem[];
+  onCopy: () => Promise<void>;
 }
 
 const CATEGORY_LABELS: Record<
@@ -12,7 +15,8 @@ const CATEGORY_LABELS: Record<
   CARB: "Hidratos",
   PROTEIN: "Proteínas",
   VEGETABLE: "Verduras",
-  ELABORATION: "Elaboración",
+  CONDIMENT: "Salsas y condimentos",
+  ELABORATION: "Preparación",
   EXTRA: "Extras",
 };
 
@@ -20,12 +24,13 @@ const CATEGORY_ORDER: ShoppingItem["category"][] = [
   "CARB",
   "PROTEIN",
   "VEGETABLE",
-  "ELABORATION",
+  "CONDIMENT",
   "EXTRA",
 ];
 
 export default function ShoppingList({
   items,
+  onCopy,
 }: ShoppingListProps) {
   const categories = CATEGORY_ORDER.filter(
     (category) =>
@@ -38,6 +43,7 @@ export default function ShoppingList({
     <section className="shopping-list">
       <div className="shopping-list-heading">
         <h2>Lista de la compra</h2>
+        <CopyButton onCopy={onCopy} label="Copiar lista" disabled={!items.length} />
       </div>
 
       {items.length === 0 ? (
@@ -53,7 +59,7 @@ export default function ShoppingList({
                 <th>Ingrediente</th>
                 <th>Personas</th>
                 <th>Días</th>
-                <th>Total</th>
+                <th>Raciones</th>
               </tr>
             </thead>
 
@@ -65,7 +71,7 @@ export default function ShoppingList({
                 );
 
                 return (
-                  <>
+                  <Fragment key={category}>
                     <tr
                       key={`${category}-header`}
                       className="shopping-category-row"
@@ -95,11 +101,11 @@ export default function ShoppingList({
                         <td>{item.days}</td>
 
                         <td>
-                          {item.total} personas-comida
+                          {item.total}
                         </td>
                       </tr>
                     ))}
-                  </>
+                  </Fragment>
                 );
               })}
             </tbody>
