@@ -22,6 +22,8 @@ export interface Selection {
 }
 
 export interface Meal {
+  recipeId?: string;
+  recipeName?: string;
   enabled: boolean;
   people: number;
   carbs: Selection[];

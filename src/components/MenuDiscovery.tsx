@@ -1,7 +1,8 @@
-import { useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import type { Component, DayPlan, Meal } from '../types/recipe';
-import { categoryKeys, emptyMeal, shuffledIdeas, type MenuIdea, type MealType } from '../services/menuIdeas';
+import { categoryKeys, emptyMeal, type MenuIdea, type MealType } from '../services/menuIdeas';
 import { assignMenuToSlots, nextActiveSlot, nextUnplannedSlot } from '../services/weekPlanning';
+import { resolveDiscoveryDeck, snapshotIdea } from '../services/discoveryDeck';
 import AssignMenuDialog from './AssignMenuDialog';
 import './MenuDiscovery.css';
 
@@ -30,7 +31,10 @@ export default function MenuDiscovery({ week, components, ideas, onChoose, onAss
   const suppressClick = useRef(false);
   const day = Math.floor(Math.max(0, slot) / 2);
   const type: MealType = slot % 2 ? 'dinner' : 'lunch';
-  const options = useMemo(() => shuffledIdeas(ideas, type, shuffleSeed), [ideas, type, shuffleSeed]);
+  const [deck, setDeck] = useState(() => resolveDiscoveryDeck(null, ideas, type, shuffleSeed));
+  const currentDeck = resolveDiscoveryDeck(deck, ideas, type, shuffleSeed);
+  if (currentDeck !== deck) setDeck(currentDeck);
+  const options = currentDeck.cards;
   const idea = options[candidate];
   const changeSlot = (next: number) => {
     setSlot(next);
@@ -45,14 +49,15 @@ export default function MenuDiscovery({ week, components, ideas, onChoose, onAss
     if (next < 0) onFinish();
   };
   const assign = (menu: MenuIdea, targets: number[]) => {
-    const updated = assignMenuToSlots(week, menu.meal, targets);
-    onAssign(menu.meal, targets);
+    const meal = { ...menu.meal, recipeId: menu.id, recipeName: menu.name };
+    const updated = assignMenuToSlots(week, meal, targets);
+    onAssign(meal, [...targets]);
     setSelected(null);
     if (targets.includes(slot)) {
       setNotice('');
       advance(updated);
     } else {
-      setNotice(targets.map(target => `${week[Math.floor(target / 2)].day} · ${target % 2 ? 'cena' : 'comida'}`).join(' / '));
+      setNotice(`${menu.name} → ` + targets.map(target => `${week[Math.floor(target / 2)].day} · ${target % 2 ? 'cena' : 'comida'}`).join(' / '));
     }
   };
   const choose = () => { if (idea) assign(idea, [slot]); };
@@ -71,8 +76,8 @@ export default function MenuDiscovery({ week, components, ideas, onChoose, onAss
     <div className="discovery-days" aria-label="Ir a un día">{week.map((d, i) => <button key={d.day} disabled={!d.lunch.enabled && !d.dinner.enabled} aria-pressed={day === i} onClick={() => { changeSlot(nextActiveSlot(week, i * 2)); setNotice(''); }}>{d.day.slice(0, 3)}</button>)}</div>
     {idea ? <>
       <article className="idea-card swipe-card" role="button" tabIndex={0} aria-label={`${idea.name}. Elegir día y comida`} style={{ transform: `translateX(${drag}px) rotate(${drag / 22}deg)` }}
-        onClick={() => { if (suppressClick.current) { suppressClick.current = false; return; } setSelected(idea); }}
-        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(idea); } }}
+        onClick={() => { if (suppressClick.current) { suppressClick.current = false; return; } setSelected(snapshotIdea(idea)); }}
+        onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelected(snapshotIdea(idea)); } }}
         onPointerDown={e => { if (e.button !== 0) return; suppressClick.current = false; start.current = { x: e.clientX, y: e.clientY }; e.currentTarget.setPointerCapture(e.pointerId); }}
         onPointerMove={e => { if (start.current) { const dx = e.clientX - start.current.x; if (Math.abs(dx) > 10 || Math.abs(e.clientY - start.current.y) > 10) suppressClick.current = true; setDrag(Math.max(-140, Math.min(140, dx))); } }}
         onPointerCancel={() => { start.current = null; suppressClick.current = true; setDrag(0); }}
@@ -87,6 +92,6 @@ export default function MenuDiscovery({ week, components, ideas, onChoose, onAss
     </> : <div className="idea-card"><h3>{options.length ? 'Has visto todas' : 'No hay recetas para este turno'}</h3>{options.length > 0 ? <button className="choose-idea" onClick={() => { setCandidate(0); setShuffleSeed(seed => (seed + 0x6d2b79f5) >>> 0); }}>Mezclar de nuevo</button> : <p>Añade una en «Mis recetas».</p>}</div>}
     {notice && <p className="assignment-notice" role="status">Guardado: {notice}</p>}
     <div className="discovery-footer"><button className="quiet-action" onClick={skip}>Nadie en casa</button><button className="quiet-action" onClick={onFinish}>Mi semana →</button></div>
-    {selected && <AssignMenuDialog idea={selected} week={week} onAssign={targets => assign(selected, targets)} onClose={() => setSelected(null)} />}
+    {selected && <AssignMenuDialog idea={selected} week={week} onAssign={assign} onClose={() => setSelected(null)} />}
   </section>;
 }

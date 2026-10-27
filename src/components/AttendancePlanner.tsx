@@ -17,7 +17,7 @@ export default function AttendancePlanner({ week, onChange, onDone }: {
     <div className="attendance-table">
       <div className="attendance-row attendance-heading"><span>Día</span><span>☀️ Comida</span><span>☾ Cena</span></div>
       {week.map((day, index) => <div className="attendance-row" key={day.day}>
-        <strong>{day.day}</strong>
+        <strong title={day.day} aria-label={day.day}>{day.day.slice(0, 3)}</strong>
         {(['lunch', 'dinner'] as const).map(type => {
           const count = day[type].enabled ? day[type].people : 0;
           const label = `${type === 'lunch' ? 'Comida' : 'Cena'} del ${day.day.toLowerCase()}`;

@@ -204,6 +204,7 @@ export default function MealSlot({
 
       {meal.enabled && (
         <div className="meal-content">
+          {hasMeal && meal.recipeName && <p className="assigned-recipe-name">{meal.recipeName}</p>}
           {!hasMeal ? (
             <button
               type="button"

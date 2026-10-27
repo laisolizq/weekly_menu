@@ -31,6 +31,8 @@ const isLocal =
 
 function normalizeMeal(meal: Partial<DayPlan["lunch"]> | undefined) {
   return {
+    recipeId: meal?.recipeId,
+    recipeName: meal?.recipeName,
     enabled: meal?.enabled ?? true,
     people: meal?.people || 1,
     carbs: meal?.carbs ?? [],
@@ -358,6 +360,8 @@ function App() {
           [meal]: {
             ...day[meal],
             enabled: true,
+            recipeId: undefined,
+            recipeName: undefined,
             [category]: [
               ...currentSelections,
               selection,
@@ -388,6 +392,8 @@ function App() {
           ...day,
           [meal]: {
             ...day[meal],
+            recipeId: undefined,
+            recipeName: undefined,
             [category]: day[meal][category].filter(
               (item) =>
                 !(
