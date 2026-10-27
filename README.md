@@ -17,7 +17,7 @@ El frontend funciona sin Django. La semana, la asistencia y las recetas propias 
 
 1. «Vaciar semana» en «Mi semana» quita los platos y reinicia la asistencia a 2 por turno. Conserva recetas y componentes. «Deshacer vaciado» recupera la semana anterior durante los siguientes 10 segundos (o hasta recargar la página).
 2. En «Quién come», cambia solo las excepciones: 0, 1, 2 o + para invitados.
-3. «Listo, elegir menús» recorre los turnos con gente en casa y usa sus cantidades sin volver a preguntarlas.
+3. «Elegir menús» recorre los turnos pendientes con gente en casa. Aceptar usa siempre las personas de «Quién come», sin preguntas adicionales. Toca una tarjeta para asignarla a uno o varios turnos en el selector semanal; los turnos ocupados se señalan antes de sustituirlos.
 4. «Mi semana» permite editar platos y personas. La compra se recalcula.
 
 ## Componentes en JSON

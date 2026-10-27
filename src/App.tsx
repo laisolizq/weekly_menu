@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { mergeRecipes, parseRecipeCatalog } from "./services/recipeCatalog";
 import { migrateMealCategories } from "./services/categoryMigration";
 import AttendancePlanner from "./components/AttendancePlanner";
-import { newWeek, nextActiveSlot } from "./services/weekPlanning";
+import { newWeek, nextActiveSlot, assignMenuToSlots } from "./services/weekPlanning";
 import MenuDiscovery from "./components/MenuDiscovery";
 import MenuRecipes from "./components/MenuRecipes";
 import { ideaIsAvailable, type MenuIdea } from "./services/menuIdeas";
@@ -415,7 +415,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <div className="app-brand"><span className="brand-mark" aria-hidden="true">m.</span><div><h1>Menú semanal</h1><span className="brand-caption">Menos vueltas. Más a tu gusto.</span></div>
+        <div className="app-brand"><span className="brand-mark" aria-hidden="true">m.</span><div><h1>Menú semanal</h1></div>
           {installState.installable && !installState.installed && !isLocal && <button className="button-secondary install-button" onClick={handleInstallClick}>Instalar</button>}
         </div>
         <nav className="app-tabs" aria-label="Secciones principales">
@@ -431,7 +431,7 @@ function App() {
 
       <main className="week">
         {view === 'week' && !showSummary && <div className="page-heading">
-          <div><span className="section-kicker">Tu planificación</span><h2>Mi semana</h2><p>Todo a la vista, listo para ajustar.</p></div>
+          <div><span className="section-kicker">Tu planificación</span><h2>Mi semana</h2></div>
           <div className="page-actions">
             {!showSummary && <button className="button-primary" onClick={() => setShowSummary(true)}>Ver resumen semanal <span aria-hidden="true">↗</span></button>}
             <button className="button-danger" onClick={clearWeek}>Vaciar semana</button>
@@ -477,8 +477,9 @@ function App() {
           />
         )}
 
-        {view === 'discover' && <MenuDiscovery key={resetVersion} attendanceReady={attendanceReady} week={week} components={components} ideas={ideas}
+        {view === 'discover' && <MenuDiscovery key={resetVersion} week={week} components={components} ideas={ideas}
           onChoose={(dayIndex, type, meal) => setWeek(current => current.map((day, index) => index === dayIndex ? { ...day, [type]: meal } : day))}
+          onAssign={(meal, slots) => setWeek(current => assignMenuToSlots(current, meal, slots))}
           onFinish={() => setView('week')} />}
 
         {view === 'week' && !showSummary && week.map((dayPlan, index) => (

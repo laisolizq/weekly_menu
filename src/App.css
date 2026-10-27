@@ -42,3 +42,16 @@ button:disabled { cursor: not-allowed; opacity: .5; }
   .app-tabs { display: flex; overflow-x: auto; scrollbar-width: thin; }
   .app-tabs button { flex: 0 0 auto; padding: 13px 12px; }
 }
+
+/* Readable controls across the main screens. */
+.app-tabs button { font-size: .95rem; }
+.button-primary, .button-secondary, .header-action, .button-danger { font-size: .95rem; }
+.app .recipe-form label, .app .recipe-form input, .app .recipe-form select, .app .recipe-form textarea { font-size: 1rem; }
+.app .recipe-components .component-option-name { font-size: .9rem; }
+.app .recipe-catalogue-item strong { font-size: 1rem; }
+.app .recipe-catalogue-item span, .app .recipe-export-note { font-size: .9rem; }
+.app .meal-summary-value, .app .summary-meal { font-size: .95rem; }
+.app .meal-summary-label { font-size: .78rem; }
+.app .shopping-list th { font-size: .8rem; }
+.app .shopping-list td { font-size: .95rem; }
+@media (max-width: 600px) { .app-tabs button { padding: 12px 10px; } .app-brand { padding: 12px 0; } }

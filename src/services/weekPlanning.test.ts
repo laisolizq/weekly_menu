@@ -28,3 +28,34 @@ describe('weekly attendance', () => {
     expect(generateShoppingList(week, catalog)[0].total).toBe(5);
   });
 });
+
+import { assignMenuToSlots, nextUnplannedSlot } from './weekPlanning';
+import { emptyMeal } from './menuIdeas';
+
+it('assigns one recipe to multiple turns using each attendance count and skips absences', () => {
+  const week = newWeek();
+  week[0].lunch = withAttendance(week[0].lunch, 1);
+  week[1].dinner = withAttendance(week[1].dinner, 5);
+  week[2].lunch = withAttendance(week[2].lunch, 0);
+  const menu = { ...emptyMeal(), proteins: [{ componentId: 'chicken' }] };
+  const updated = assignMenuToSlots(week, menu, [0, 3, 4]);
+  expect(updated[0].lunch.people).toBe(1);
+  expect(updated[1].dinner.people).toBe(5);
+  expect(updated[2].lunch.enabled).toBe(false);
+  expect(updated[2].lunch.proteins).toEqual([]);
+  expect(updated[0].lunch.proteins).toEqual(menu.proteins);
+  expect(updated[0].lunch.proteins).not.toBe(updated[1].dinner.proteins);
+  expect(week[0].lunch.proteins).toEqual([]);
+  expect(nextUnplannedSlot(updated, 0)).toBe(1);
+  expect(nextUnplannedSlot(updated, 3)).toBe(5);
+});
+
+it('replaces an occupied meal completely while keeping attendance', () => {
+  const week = newWeek();
+  week[0].lunch.carbs = [{ componentId: 'rice' }];
+  const menu = { ...emptyMeal(), vegetables: [{ componentId: 'broccoli' }] };
+  const updated = assignMenuToSlots(week, menu, [0]);
+  expect(updated[0].lunch.carbs).toEqual([]);
+  expect(updated[0].lunch.vegetables).toEqual(menu.vegetables);
+  expect(updated[0].lunch.people).toBe(2);
+});

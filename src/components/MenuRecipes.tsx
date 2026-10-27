@@ -35,8 +35,8 @@ export default function MenuRecipes({ components, recipes, personalRecipeIds, on
       <div><span className="section-kicker">Tu catálogo</span><h2>Mis recetas</h2></div>
       <button className="button-secondary" onClick={() => downloadRecipeCatalog(recipes, components)}>Descargar recetas JSON</button>
     </div>
-    <p className="recipe-export-note">La descarga incluye tus recetas guardadas y todos los componentes, también los nuevos, para llevarlos al ordenador.</p>
-    <p>Monta tu receta por categorías. Puedes elegir varios componentes y dejar categorías vacías.</p>
+    <p className="recipe-export-note">El JSON incluye recetas y componentes.</p>
+    <p>Elige los componentes de tu receta.</p>
     <form className="recipe-form" onSubmit={e => {
       e.preventDefault();
       if (!name.trim() || !types.length || !selections.length) { setMessage('Añade un nombre, al menos un turno y un componente.'); return; }

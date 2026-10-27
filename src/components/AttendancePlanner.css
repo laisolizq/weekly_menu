@@ -11,3 +11,7 @@
 .attendance-guests button { border: 1px solid var(--line); border-radius: 8px; padding: 7px 12px; background: white; }
 .week-reset-notice { padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: #fff; margin-bottom: 16px; }
 @media (max-width: 480px) { .attendance-row { gap: 6px; font-size: .78rem; } }
+.attendance-row { font-size: .95rem; }
+.attendance-heading, .attendance-guests { font-size: .9rem; }
+.attendance-options button { font-size: 1rem; min-height: 44px; }
+@media (max-width: 380px) { .attendance-row { grid-template-columns: 68px 1fr 1fr; font-size: .85rem; } }

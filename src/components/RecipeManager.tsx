@@ -152,7 +152,7 @@ export default function RecipeManager({
         </button>
       </div>
 
-      <p>Añade ingredientes, salsas y formas de preparación a tu catálogo. Salsas, condimentos y preparados se incluyen en la compra. Las formas de preparación (horno, plancha, salteado…) no. Se guardan en este navegador.</p>
+      <p>Ingredientes y salsas: se compran. Preparación: no se compra. Guardado en este navegador.</p>
       <form
         className="recipe-form"
         onSubmit={addComponent}

@@ -10,10 +10,10 @@ export default function AttendancePlanner({ week, onChange, onDone }: {
     onChange(week.map((day, i) => i === index ? { ...day, [type]: withAttendance(day[type], people) } : day));
   };
   return <section className="attendance-planner">
-    <span className="section-kicker">Primero, quién está en casa</span>
-    <h2>¿Cuántos somos esta semana?</h2>
-    <p>Partimos de 2. Cambia solo los turnos distintos: 0 si no está nadie, 1 si come uno y + si hay invitados.</p>
-    <button className="header-action" onClick={() => onChange(week.map(day => ({ ...day, lunch: withAttendance(day.lunch, 2), dinner: withAttendance(day.dinner, 2) })))}>Poner 2 en toda la semana</button>
+
+    <h2>Quién come en casa</h2>
+    <p>0 · Fuera    1–2 · Personas    + · Invitados</p>
+    <button className="header-action" onClick={() => onChange(week.map(day => ({ ...day, lunch: withAttendance(day.lunch, 2), dinner: withAttendance(day.dinner, 2) })))}>2 toda la semana</button>
     <div className="attendance-table">
       <div className="attendance-row attendance-heading"><span>Día</span><span>☀️ Comida</span><span>☾ Cena</span></div>
       {week.map((day, index) => <div className="attendance-row" key={day.day}>
@@ -28,7 +28,7 @@ export default function AttendancePlanner({ week, onChange, onDone }: {
         })}
       </div>)}
     </div>
-    <p>Los turnos con 0 se saltan al elegir menús. Puedes volver a cambiar esta tabla cuando quieras.</p>
-    <button className="choose-idea" onClick={onDone}>Listo, elegir menús →</button>
+
+    <button className="choose-idea" onClick={onDone}>Elegir menús →</button>
   </section>;
 }
